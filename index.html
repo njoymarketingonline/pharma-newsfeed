@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pharma Marketing News — Daily Briefing</title>
+    <title>Pharma Marketing News Feed</title>
     <style>
         * {
             margin: 0;
@@ -13,394 +13,304 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            background-color: #f5f7fa;
             color: #333;
-            background-color: #f9f9f9;
+            line-height: 1.6;
+            padding: 20px;
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
         }
 
-        header {
-            background: linear-gradient(135deg, #003d7a 0%, #004e89 100%);
+        .header {
+            background: linear-gradient(135deg, #1e4d7b 0%, #2a5fa0 100%);
             color: white;
-            padding: 40px 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 40px 30px;
+            border-radius: 6px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        header h1 {
+        .header h1 {
             font-size: 32px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            font-weight: 600;
         }
 
-        header p {
+        .header .date {
             font-size: 16px;
-            opacity: 0.95;
+            opacity: 0.9;
         }
 
-        .date-stamp {
-            font-size: 14px;
-            margin-top: 10px;
-            opacity: 0.9;
+        .editorial {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 35px;
+            border-left: 4px solid #1e4d7b;
+            border-radius: 4px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        }
+
+        .editorial p {
+            margin: 0;
+            font-size: 15px;
+            color: #444;
         }
 
         .section {
             margin-bottom: 40px;
         }
 
-        .section-header {
-            background-color: #e8f0f7;
-            padding: 15px 20px;
-            border-left: 5px solid #003d7a;
+        .section-title {
+            color: #1e4d7b;
+            font-size: 22px;
+            font-weight: 600;
+            border-bottom: 3px solid #1e4d7b;
+            padding-bottom: 12px;
             margin-bottom: 20px;
-            font-size: 20px;
-            font-weight: bold;
-            color: #003d7a;
-            border-radius: 4px;
-        }
-
-        .news-grid {
-            display: grid;
-            gap: 20px;
         }
 
         .news-item {
-            background: white;
-            padding: 20px;
-            border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-            border-left: 4px solid #e0e0e0;
-            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+            background-color: white;
+            padding: 22px;
+            margin-bottom: 16px;
+            border-radius: 4px;
+            border-left: 4px solid #e8f0f7;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
         }
 
         .news-item:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
         }
 
-        .news-item.nl {
-            border-left-color: #ff6b35;
-        }
-
-        .news-item.eu {
-            border-left-color: #004e89;
-        }
-
-        .news-item.global {
-            border-left-color: #1b6ca8;
-        }
-
-        .news-header {
+        .news-item h3 {
+            color: #1e4d7b;
+            font-size: 16px;
+            margin: 0 0 10px 0;
+            font-weight: 600;
             display: flex;
-            align-items: flex-start;
-            margin-bottom: 12px;
+            align-items: center;
+            gap: 10px;
         }
 
         .tag {
             display: inline-block;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: white;
-            margin-right: 12px;
-            flex-shrink: 0;
-        }
-
-        .tag.nl {
-            background-color: #ff6b35;
-        }
-
-        .tag.eu {
-            background-color: #004e89;
-        }
-
-        .tag.global {
-            background-color: #1b6ca8;
-        }
-
-        .news-item h3 {
-            font-size: 18px;
-            color: #003d7a;
-            margin-bottom: 10px;
-            line-height: 1.4;
-            flex-grow: 1;
+            background-color: #e8f0f7;
+            color: #1e4d7b;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
         }
 
         .news-item p {
-            font-size: 14px;
             color: #555;
-            margin-bottom: 12px;
+            font-size: 14px;
+            margin: 0;
             line-height: 1.6;
         }
 
         .source-link {
             display: inline-block;
-            color: #003d7a;
+            margin-top: 10px;
+            color: #1e4d7b;
             text-decoration: none;
+            font-weight: 500;
             font-size: 13px;
-            font-weight: 600;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.2s ease;
+            transition: color 0.3s ease;
         }
 
         .source-link:hover {
-            border-bottom-color: #003d7a;
+            color: #2a5fa0;
+            text-decoration: underline;
         }
 
         .trends {
-            background: linear-gradient(135deg, #f0f6ff 0%, #e8f0f7 100%);
+            background: linear-gradient(135deg, #f0f5f9 0%, #f8fafc 100%);
             padding: 25px;
-            border-radius: 6px;
-            border-left: 5px solid #003d7a;
-            margin-top: 40px;
+            border-left: 4px solid #ff9800;
+            border-radius: 4px;
+            margin-bottom: 35px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
         }
 
-        .trends h3 {
-            color: #003d7a;
-            margin-bottom: 15px;
+        .trends h2 {
+            color: #1e4d7b;
             font-size: 20px;
+            margin: 0 0 15px 0;
+            font-weight: 600;
         }
 
         .trends ul {
             list-style: none;
+            padding: 0;
         }
 
         .trends li {
-            margin-bottom: 15px;
-            padding-left: 24px;
-            position: relative;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(30, 77, 123, 0.1);
+            color: #444;
             font-size: 14px;
-            color: #333;
-            line-height: 1.6;
         }
 
-        .trends li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #003d7a;
-            font-weight: bold;
+        .trends li:last-child {
+            border-bottom: none;
         }
 
         .trends strong {
-            color: #003d7a;
+            color: #1e4d7b;
         }
 
-        footer {
-            background-color: #f5f5f5;
-            padding: 25px;
-            border-top: 2px solid #ddd;
+        .footer {
+            border-top: 2px solid #e0e0e0;
+            padding-top: 25px;
             margin-top: 40px;
-            text-align: center;
-            border-radius: 6px;
-        }
-
-        footer p {
-            font-size: 12px;
             color: #666;
-            margin-bottom: 8px;
-            line-height: 1.5;
+            font-size: 13px;
+            text-align: center;
         }
 
-        footer strong {
-            color: #003d7a;
+        .footer p {
+            margin: 8px 0;
+        }
+
+        .no-news {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 4px;
+            color: #888;
+            font-style: italic;
+            margin-bottom: 20px;
         }
 
         @media (max-width: 768px) {
-            .container {
-                padding: 15px;
+            body {
+                padding: 12px;
             }
 
-            header {
-                padding: 30px 15px;
+            .header {
+                padding: 30px 20px;
             }
 
-            header h1 {
+            .header h1 {
                 font-size: 24px;
             }
 
-            .news-item h3 {
-                font-size: 16px;
+            .news-item {
+                padding: 18px;
             }
 
-            .news-header {
-                flex-direction: column;
-            }
-
-            .tag {
-                margin-bottom: 8px;
+            .section-title {
+                font-size: 18px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Pharma Marketing News</h1>
-            <p>Daily Industry Briefing & Regulatory Updates</p>
-            <div class="date-stamp">Tuesday, April 14, 2026</div>
-        </header>
+        <div class="header">
+            <h1>Pharma Marketing News Feed</h1>
+            <div class="date">Monday, April 20, 2026</div>
+        </div>
 
-        <section class="section">
-            <div class="section-header">🇳🇱 Netherlands News</div>
-            <div class="news-grid">
-                <div class="news-item nl">
-                    <div class="news-header">
-                        <span class="tag nl">NL</span>
-                        <h3>KNMP Spring Congress 2026 Registration Now Open</h3>
-                    </div>
-                    <p>The Royal Dutch Pharmacists Association (KNMP) has opened registration for its Spring Congress 2026 on March 10, themed "Infectious Diseases | Broad-spectrum Challenges for Pharmacists." The event will feature discussions relevant to public and hospital pharmacists in the Netherlands.</p>
-                    <a href="https://www.knmp.nl/" class="source-link">→ Read at KNMP</a>
-                </div>
+        <div class="editorial">
+            <p><strong>Top Story:</strong> As pharmaceutical marketing enters a new era of regulatory scrutiny and digital-first strategies, this week's news highlights critical shifts in compliance, innovation, and patient engagement. The FDA's push for legislative authority over DTC advertising signals tighter controls ahead, while Eli Lilly's approval of Foundayo marks another milestone in competitive GLP-1 development—underscoring the importance of robust launch strategies in crowded therapeutic categories.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Netherlands</h2>
+            <div class="no-news">
+                No specific Netherlands pharmaceutical marketing news identified this period. Please see European and Global sections for latest developments.
             </div>
-        </section>
+        </div>
 
-        <section class="section">
-            <div class="section-header">🇪🇺 European News</div>
-            <div class="news-grid">
-                <div class="news-item eu">
-                    <div class="news-header">
-                        <span class="tag eu">EU</span>
-                        <h3>EMA CHMP Meeting Highlights — March 2026</h3>
-                    </div>
-                    <p>The European Medicines Agency's Committee for Medicinal Products for Human Use (CHMP) held meetings from March 23-26, 2026, reviewing marketing authorisation applications and post-approval compliance. Key takeaway: EMA continues to prioritize transparency in marketing communications.</p>
-                    <a href="https://www.ema.europa.eu/en/news/meeting-highlights-committee-medicinal-products-human-use-chmp-23-26-march-2026" class="source-link">→ Read at EMA</a>
-                </div>
+        <div class="section">
+            <h2 class="section-title">Europe</h2>
 
-                <div class="news-item eu">
-                    <div class="news-header">
-                        <span class="tag eu">EU</span>
-                        <h3>PRAC Issues Safety Communication for Epilepsy Medicine</h3>
-                    </div>
-                    <p>The EMA's Pharmacovigilance Risk Assessment Committee (PRAC) agreed on a Direct Healthcare Professional Communication (DHPC) regarding severe liver injury cases with Ontozry (epilepsy medicine) during April 7-10, 2026 meetings. The communication plan demonstrates EMA's coordinated approach to drug safety marketing.</p>
-                    <a href="https://www.ema.europa.eu/en/news/meeting-highlights-pharmacovigilance-risk-assessment-committee-prac-7-10-april-2026" class="source-link">→ Read at EMA</a>
-                </div>
-
-                <div class="news-item eu">
-                    <div class="news-header">
-                        <span class="tag eu">EU</span>
-                        <h3>EMA Invites Pharma Portfolio Meetings for H2 2026</h3>
-                    </div>
-                    <p>The European Medicines Agency is inviting large pharmaceutical companies to submit applications for portfolio and technology meetings in the second half of 2026, with a deadline of April 30, 2026. These meetings support strategic product development planning.</p>
-                    <a href="https://www.ema.europa.eu/en/pharmaceutical-industry" class="source-link">→ Read at EMA</a>
-                </div>
-
-                <div class="news-item eu">
-                    <div class="news-header">
-                        <span class="tag eu">EU</span>
-                        <h3>EMA Publishes First Clinical Trial Performance Indicators</h3>
-                    </div>
-                    <p>The European Medicines Agency released key performance indicators (KPIs) on clinical trial attractiveness and speed in April 2026, providing transparency metrics that impact how pharmaceutical companies market their development timelines and regulatory expertise.</p>
-                    <a href="https://www.ema.europa.eu/en/news" class="source-link">→ Read at EMA</a>
-                </div>
-
-                <div class="news-item eu">
-                    <div class="news-header">
-                        <span class="tag eu">EU</span>
-                        <h3>ECRD 2026: Rare Diseases Conference in June</h3>
-                    </div>
-                    <p>The European Conference on Rare Diseases (ECRD) will take place June 3-4, 2026, in Prague, titled "Rare Diseases in a Changing & Competitive Europe: Shaping policies to address the unmet needs of people living with rare diseases." A key networking and policy event for pharma marketers.</p>
-                    <a href="https://www.efpia.eu/news-events/events/" class="source-link">→ Read at EFPIA</a>
-                </div>
+            <div class="news-item">
+                <h3><span class="tag">[EU]</span> EMA Approves mCombriax: First Combined mRNA Vaccine for COVID-19 and Flu</h3>
+                <p>The EMA's Committee for Medicinal Products for Human Use (CHMP) recommended mCombriax for approval in February 2026. This represents the first combined messenger RNA vaccine for COVID-19 and seasonal influenza, targeting adults aged 50 and older—a significant breakthrough in immunization marketing and patient education strategies.</p>
+                <a href="https://www.ema.europa.eu/en/news/meeting-highlights-committee-medicinal-products-human-use-chmp-23-26-february-2026" class="source-link" target="_blank">→ European Medicines Agency</a>
             </div>
-        </section>
 
-        <section class="section">
-            <div class="section-header">🌍 Global News & Trends</div>
-            <div class="news-grid">
-                <div class="news-item global">
-                    <div class="news-header">
-                        <span class="tag global">Global</span>
-                        <h3>Pharma Marketing Shifts Away from Traditional TV Advertising</h3>
-                    </div>
-                    <p>FiercePharma reports that pharma ad spending is continuing its shift away from traditional television in 2026. Digital channels, social media, and direct-to-consumer platforms are becoming the primary focus for pharmaceutical marketing budgets as companies reach patients where they spend their time online.</p>
-                    <a href="https://www.fiercepharma.com/marketing/2026-forecast-pharma-ad-dollars-will-continue-shifting-away-traditional-tv" class="source-link">→ Read at FiercePharma</a>
-                </div>
-
-                <div class="news-item global">
-                    <div class="news-header">
-                        <span class="tag global">Global</span>
-                        <h3>Direct-to-Consumer Model Reshapes Pharma Marketing</h3>
-                    </div>
-                    <p>Pharma companies are clicking with patients through evolving direct sales models. Companies like Novo Nordisk, Pfizer, and Eli Lilly are launching proprietary DTC channels and delivery platforms, fundamentally reshaping how pharmaceutical brands interact directly with consumers and healthcare professionals.</p>
-                    <a href="https://www.fiercepharma.com/marketing/pharma-clicks-patients-direct-sales-model-shifts-marketing-strategies" class="source-link">→ Read at FiercePharma</a>
-                </div>
-
-                <div class="news-item global">
-                    <div class="news-header">
-                        <span class="tag global">Global</span>
-                        <h3>Dawnzera Wins 2026 Drug Name Tournament</h3>
-                    </div>
-                    <p>Ionis' Dawnzera emerged victorious in the #FierceMadness 2026 Drug Name Tournament, beating out 63 other newly-approved drug names. Voters praised the name as "marketing at its finest," highlighting effective pharmaceutical brand naming strategy in a competitive marketplace.</p>
-                    <a href="https://www.fiercepharma.com/marketing/fierce-madness-2026-drug-name-tournament" class="source-link">→ Read at FiercePharma</a>
-                </div>
-
-                <div class="news-item global">
-                    <div class="news-header">
-                        <span class="tag global">Global</span>
-                        <h3>Virtual Care Report: Implications for Pharma Marketing</h3>
-                    </div>
-                    <p>Populus Health Technologies released a comprehensive report on virtual care in America (April 7, 2026), examining how virtual care trends impact patients, HCPs, and pharma manufacturers. The findings are featured in PM360's June 2026 issue with a dedicated Virtual Care Playbook for pharma executives.</p>
-                    <a href="https://pm360online.com/" class="source-link">→ Read at PM360</a>
-                </div>
-
-                <div class="news-item global">
-                    <div class="news-header">
-                        <span class="tag global">Global</span>
-                        <h3>AI's Role in Pharma Marketing Shifts from Analysis to Action</h3>
-                    </div>
-                    <p>PharmaVoice highlights that 2026 is the year agentic AI moves from analytical tools to actionable marketing systems. AI can now help teams quickly understand why messages aren't landing and adjust strategy, even creating digital twins of physician personas for targeted message testing.</p>
-                    <a href="https://www.pharmavoice.com/spons/2026-the-year-ais-role-in-pharma-shifts-from-analysis-to-action/" class="source-link">→ Read at PharmaVoice</a>
-                </div>
-
-                <div class="news-item global">
-                    <div class="news-header">
-                        <span class="tag global">Global</span>
-                        <h3>FDA Intensifies Enforcement on Pharma DTC and Social Media</h3>
-                    </div>
-                    <p>The FDA has adopted an aggressively regulatory stance toward direct-to-consumer (DTC) drug advertising and social media promotion. As of April 2026, more than 70 Untitled and Warning Letters have been issued, with heightened scrutiny on fair balance requirements and AI-generated content in pharma ads.</p>
-                    <a href="https://www.fda.gov/" class="source-link">→ Read at FDA.gov</a>
-                </div>
-
-                <div class="news-item global">
-                    <div class="news-header">
-                        <span class="tag global">Global</span>
-                        <h3>Obesity Drugs Top Performer in 2026 Pharma Marketing</h3>
-                    </div>
-                    <p>Obesity treatments are poised to be the top-performing therapeutic area in 2026 pharma marketing, driven by the rise of oral and combination drugs. Competitors are working to match Novo Nordisk's early market lead, with oral treatments capturing meaningful market share among patients preferring alternatives to injectables.</p>
-                    <a href="https://www.pharmavoice.com/" class="source-link">→ Read at PharmaVoice</a>
-                </div>
-
-                <div class="news-item global">
-                    <div class="news-header">
-                        <span class="tag global">Global</span>
-                        <h3>J&J Markets Caplyta for Major Depressive Disorder</h3>
-                    </div>
-                    <p>Following FDA approval in late 2025, Johnson & Johnson has launched marketing campaigns for Caplyta targeting major depressive disorder. Analysts project Caplyta could become a multi-billion-dollar product, with estimates of approximately $5 billion in annual sales.</p>
-                    <a href="https://www.fiercepharma.com/marketing/top-10-most-anticipated-drug-launches-2026" class="source-link">→ Read at FiercePharma</a>
-                </div>
+            <div class="news-item">
+                <h3><span class="tag">[EU]</span> EMA Approves Tarlatamab (Imdylltra) for Relapsed Small Cell Lung Cancer</h3>
+                <p>In March 2026, the CHMP recommended approval of Imdylltra (tarlatamab), addressing an unmet medical need in patients with relapsed extensive-stage small cell lung cancer. This approval highlights growing opportunities in oncology marketing for niche, high-need patient populations.</p>
+                <a href="https://www.ema.europa.eu/en/news/meeting-highlights-committee-medicinal-products-human-use-chmp-23-26-march-2026" class="source-link" target="_blank">→ European Medicines Agency</a>
             </div>
-        </section>
+
+            <div class="news-item">
+                <h3><span class="tag">[EU]</span> EMA Advances New Pharmaceutical Legislation Reform</h3>
+                <p>The EMA welcomed the political agreement on new EU pharmaceutical legislation, which will shape regulatory requirements and marketing approvals across Europe. This reform is expected to streamline development pathways and impact promotional strategy timelines.</p>
+                <a href="https://www.ema.europa.eu/en/news/ema-welcomes-political-agreement-new-eu-pharmaceutical-legislation" class="source-link" target="_blank">→ European Medicines Agency</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Global</h2>
+
+            <div class="news-item">
+                <h3><span class="tag">[Global]</span> FDA Approves Eli Lilly's Foundayo (Orforglipron) for Weight Management</h3>
+                <p>The FDA approved Foundayo on April 1, 2026, an oral GLP-1 receptor agonist for treating obesity and weight-related conditions. This oral formulation represents a significant competitive development in the crowded GLP-1 market, creating new marketing opportunities and competitive pressures in the weight management space.</p>
+                <a href="https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2026" class="source-link" target="_blank">→ FDA</a>
+            </div>
+
+            <div class="news-item">
+                <h3><span class="tag">[Global]</span> FDA Approves Generic Dapagliflozin: 14 Companies Approved for Production</h3>
+                <p>On April 7, 2026, the FDA approved 14 generic manufacturers of dapagliflozin (5 mg and 10 mg tablets), including Teva, Sandoz, and Indian manufacturers like Aurobindo, Biocon, and Cipla. This decision significantly expands market competition for this established SGLT2 inhibitor, signaling continued generic competition in the diabetes therapeutic area.</p>
+                <a href="https://www.fiercepharma.com/pharma/fierce-pharma-regulatory-tracker-2026" class="source-link" target="_blank">→ Fierce Pharma</a>
+            </div>
+
+            <div class="news-item">
+                <h3><span class="tag">[Global]</span> FDA Seeks Legislative Authority Over Misleading DTC Advertising</h3>
+                <p>The FDA has requested new powers to regulate misleading direct-to-consumer (DTC) advertising, citing "deceptive and frequently confusing" claims in digital and social media. This development signals stricter compliance requirements and potential restrictions on promotional messaging across channels.</p>
+                <a href="https://www.fiercepharma.com/marketing/fda-seeks-legislative-teeth-bite-back-against-misleading-dtc-drug-ads" class="source-link" target="_blank">→ Fierce Pharma</a>
+            </div>
+
+            <div class="news-item">
+                <h3><span class="tag">[Global]</span> Novartis Partners with NFL for Health Outcomes Marketing</h3>
+                <p>Novartis announced the first corporate pharmaceutical partnership with the National Football League, leveraging the sport's cultural reach to drive patient engagement and health commitment campaigns. This non-traditional marketing approach reflects evolving strategies to connect with consumer audiences.</p>
+                <a href="https://www.pharmavoice.com/news/novartis-nfl-deal-health-outcomes-marketing-campaign/745577/" class="source-link" target="_blank">→ PharmaVoice</a>
+            </div>
+
+            <div class="news-item">
+                <h3><span class="tag">[Global]</span> Novo Nordisk Defends GLP-1 Oral Market as Eli Lilly Advances Orforglipron</h3>
+                <p>After losing significant share to Eli Lilly in the injectable GLP-1 market, Novo Nordisk is consolidating its position in oral therapeutics. However, with Lilly launching Foundayo in Q2 2026, competitive marketing intensity is expected to accelerate in this high-value segment.</p>
+                <a href="https://www.pharmavoice.com/news/novo-lilly-weight-loss-glp-1-pill/814604/" class="source-link" target="_blank">→ PharmaVoice</a>
+            </div>
+
+            <div class="news-item">
+                <h3><span class="tag">[Global]</span> Konovo Acquires Rare Patient Voice to Expand Patient Insights</h3>
+                <p>Konovo acquired Rare Patient Voice, consolidating a community of over 200,000 registered patients and family caregivers across nine countries. This acquisition enhances capabilities in patient-centric marketing for rare and complex conditions.</p>
+                <a href="https://pm360online.com" class="source-link" target="_blank">→ PM360</a>
+            </div>
+
+            <div class="news-item">
+                <h3><span class="tag">[Global]</span> Johnson & Johnson Reports Positive Early Data for Pasritamig in Prostate Cancer</h3>
+                <p>J&J presented encouraging Phase 1b data for investigational T-cell engager pasritamig in combination with docetaxel for metastatic castration-resistant prostate cancer at the 2026 ASCO GU Cancer Symposium, demonstrating deep PSA responses and opening new oncology marketing opportunities.</p>
+                <a href="https://pm360online.com" class="source-link" target="_blank">→ PM360</a>
+            </div>
+        </div>
 
         <div class="trends">
-            <h3>📊 Key Trends to Watch</h3>
+            <h2>Trends to Watch</h2>
             <ul>
-                <li><strong>Digital-First Marketing Dominance:</strong> Traditional TV advertising continues declining as pharma shifts budgets to digital channels, social media, and proprietary DTC platforms. Companies are embracing AI-driven personalization to target specific physician and patient segments.</li>
-                <li><strong>Regulatory Enforcement Escalation:</strong> FDA enforcement on DTC advertising, social media content, and fair balance requirements has intensified. Pharma marketers must prioritize compliance with heightened scrutiny on AI-generated promotional materials and transparent risk communication.</li>
-                <li><strong>Direct-to-Consumer Innovation:</strong> Leading pharma brands are launching proprietary DTC channels that connect patients directly to healthcare professionals. This shift reflects broader industry movement toward integrated care models and reduced reliance on traditional sales forces.</li>
+                <li><strong>Regulatory Tightening on DTC:</strong> FDA's push for legislative authority over misleading advertising signals an era of stricter compliance requirements. Pharma marketers must prioritize fair-balance messaging and reduce claims substantiation risks across all digital and traditional channels.</li>
+                <li><strong>Competitive Intensity in GLP-1:</strong> With Eli Lilly's Foundayo entering the oral GLP-1 market and Novo Nordisk defending its position, expect accelerated marketing spend, clinical differentiation messaging, and patient acquisition strategies in weight management.</li>
+                <li><strong>Patient-Centric and Non-Traditional Marketing:</strong> Partnerships like Novartis-NFL and data-driven patient acquisition (Konovo acquisition) reflect a shift toward integrated, authentic engagement beyond traditional pharma messaging, requiring new creative and promotional strategies.</li>
             </ul>
         </div>
 
-        <footer>
-            <p><strong>Sources:</strong> European Medicines Agency (EMA) • EFPIA • KNMP • FiercePharma • PM360 • PharmaVoice • FDA • Pharmaceutical Technology Europe • European Pharmaceutical Review</p>
-            <p>This daily briefing is curated from whitelisted pharmaceutical industry sources and is updated automatically. For comprehensive marketing strategies and regulatory guidance, consult primary sources directly.</p>
-        </footer>
+        <div class="footer">
+            <p><strong>Whitelisted Sources:</strong></p>
+            <p>European Medicines Agency (EMA) • FDA • Fierce Pharma • PharmaVoice • PM360</p>
+            <p style="margin-top: 12px; font-style: italic;">This newsfeed is updated daily with curated pharmaceutical marketing and industry news from authoritative sources. Last updated: Monday, April 20, 2026.</p>
+        </div>
     </div>
 </body>
 </html>
