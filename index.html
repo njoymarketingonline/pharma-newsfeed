@@ -1,374 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pharmaceutical Marketing Newsfeed — April 27, 2026</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: #333;
-            line-height: 1.6;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0, 102, 204, 0.15);
-            overflow: hidden;
-        }
-        .header {
-            background: linear-gradient(135deg, #0066cc 0%, #004999 100%);
-            color: white;
-            padding: 40px 30px;
-            text-align: center;
-        }
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-        .header .date {
-            font-size: 1.1em;
-            opacity: 0.95;
-            font-weight: 300;
-        }
-        .header .tagline {
-            font-size: 0.95em;
-            margin-top: 15px;
-            opacity: 0.9;
-            font-style: italic;
-        }
-        .content {
-            padding: 30px;
-        }
-        .editorial-box {
-            background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
-            border-left: 5px solid #0066cc;
-            padding: 20px;
-            border-radius: 6px;
-            margin-bottom: 30px;
-            font-size: 0.95em;
-            line-height: 1.7;
-        }
-        .editorial-box strong {
-            color: #0066cc;
-        }
-        .section {
-            margin-bottom: 35px;
-        }
-        .section-title {
-            font-size: 1.6em;
-            color: #0066cc;
-            border-bottom: 3px solid #0066cc;
-            padding-bottom: 12px;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 20px;
-        }
-        @media (max-width: 768px) {
-            .news-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        .news-card {
-            background: #f9f9f9;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 20px;
-            transition: all 0.3s ease;
-            border-left: 4px solid #0066cc;
-        }
-        .news-card:hover {
-            box-shadow: 0 6px 20px rgba(0, 102, 204, 0.12);
-            transform: translateY(-2px);
-        }
-        .tag {
-            display: inline-block;
-            background: #0066cc;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.75em;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            margin-bottom: 10px;
-        }
-        .news-card h3 {
-            color: #0066cc;
-            font-size: 1.1em;
-            margin: 10px 0;
-            line-height: 1.4;
-            font-weight: 600;
-        }
-        .news-card p {
-            font-size: 0.9em;
-            color: #555;
-            margin-bottom: 12px;
-            line-height: 1.6;
-        }
-        .news-source {
-            font-size: 0.85em;
-            color: #999;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid #e0e0e0;
-        }
-        .news-source a {
-            color: #0066cc;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        .news-source a:hover {
-            color: #004999;
-            text-decoration: underline;
-        }
-        .trends-section {
-            background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
-            border-left: 5px solid #ff9800;
-            padding: 25px;
-            border-radius: 8px;
-            margin: 30px 0;
-        }
-        .trends-section h2 {
-            color: #ff9800;
-            margin-bottom: 15px;
-            font-size: 1.4em;
-            display: flex;
-            align-items: center;
-        }
-        .trends-section h2::before {
-            content: "🔮";
-            margin-right: 10px;
-            font-size: 1.3em;
-        }
-        .trends-section ul {
-            list-style: none;
-            padding: 0;
-        }
-        .trends-section li {
-            margin-bottom: 12px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid rgba(255, 152, 0, 0.2);
-        }
-        .trends-section li:last-child {
-            border-bottom: none;
-        }
-        .trends-section strong {
-            color: #e68900;
-        }
-        .footer {
-            background: #f5f5f5;
-            padding: 25px 30px;
-            border-top: 1px solid #e0e0e0;
-            font-size: 0.85em;
-            color: #666;
-            line-height: 1.7;
-        }
-        .footer a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
-        .footer-sources {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #ddd;
-        }
-        .footer-note {
-            margin-top: 12px;
-            font-style: italic;
-            color: #999;
-        }
-        @media (max-width: 600px) {
-            .header h1 {
-                font-size: 1.8em;
-            }
-            .header {
-                padding: 25px 20px;
-            }
-            .content {
-                padding: 20px;
-            }
-            .section-title {
-                font-size: 1.3em;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pharma Marketing Newsfeed | May 4, 2026</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 75, 135, 0.1);
+  overflow: hidden;
+}
+
+.header {
+  background: linear-gradient(135deg, #004B87 0%, #006bb3 100%);
+  color: white;
+  padding: 40px 30px;
+  text-align: center;
+  border-bottom: 4px solid #FFB84D;
+}
+
+.header h1 {
+  font-size: 36px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.header p {
+  font-size: 16px;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+.update-date {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.content {
+  padding: 30px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.section-header {
+  background: linear-gradient(90deg, #004B87 0%, #1e7ba6 100%);
+  color: white;
+  padding: 12px 18px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-header::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FFB84D;
+}
+
+.news-item {
+  background: #fafbfc;
+  border-left: 4px solid #e0e6ed;
+  padding: 18px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.news-item:hover {
+  background: #f5f8fc;
+  box-shadow: 0 2px 8px rgba(0, 75, 135, 0.08);
+}
+
+.news-item.nl {
+  border-left-color: #FFA500;
+  background: linear-gradient(90deg, #fffaedff 0%, #fafbfcff 100%);
+}
+
+.news-item.eu {
+  border-left-color: #1E90FF;
+  background: linear-gradient(90deg, #e0efff 0%, #fafbfc 100%);
+}
+
+.news-item.global {
+  border-left-color: #228B22;
+  background: linear-gradient(90deg, #e8ffe8 0%, #fafbfc 100%);
+}
+
+.tag {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-right: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tag.nl {
+  background: #FFB84D;
+  color: #8B4513;
+}
+
+.tag.eu {
+  background: #87CEEB;
+  color: #003d82;
+}
+
+.tag.global {
+  background: #90EE90;
+  color: #1a5f1a;
+}
+
+.headline {
+  font-size: 16px;
+  font-weight: 600;
+  color: #004B87;
+  margin: 10px 0;
+  line-height: 1.4;
+}
+
+.summary {
+  font-size: 14px;
+  color: #666;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.source {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #999;
+}
+
+.source a {
+  color: #004B87;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.source a:hover {
+  color: #0073c6;
+  text-decoration: underline;
+}
+
+.trends-section {
+  background: linear-gradient(135deg, #fffacd 0%, #fff8dc 100%);
+  border-left: 5px solid #FFD700;
+  padding: 22px;
+  border-radius: 6px;
+  margin: 40px 0;
+}
+
+.trends-section h3 {
+  color: #8B6914;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.trend-item {
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.trend-item strong {
+  color: #8B6914;
+}
+
+.footer {
+  background: #f0f2f5;
+  padding: 25px 30px;
+  border-top: 1px solid #e0e6ed;
+  font-size: 12px;
+  color: #666;
+}
+
+.footer-title {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.footer a {
+  color: #004B87;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .section-header {
+    font-size: 16px;
+  }
+
+  .news-item {
+    padding: 15px;
+    margin-bottom: 12px;
+  }
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <!-- HEADER -->
-        <div class="header">
-            <h1>Pharmaceutical Marketing Newsfeed</h1>
-            <div class="date">April 27, 2026</div>
-            <div class="tagline">Your daily briefing on pharmaceutical marketing, regulatory updates, and industry trends</div>
-        </div>
 
-        <!-- MAIN CONTENT -->
-        <div class="content">
-            <!-- EDITORIAL HIGHLIGHT -->
-            <div class="editorial-box">
-                <strong>📰 Today's Headline:</strong> Merck & Co. has announced a landmark $1 billion partnership with Google Cloud to revolutionize HCP engagement through agentic AI, marking a significant acceleration in pharma's digital transformation. The deal enables pharma marketers to move beyond traditional analytics toward autonomous, personalized content delivery systems.
-            </div>
+<div class="container">
+  <div class="header">
+    <h1>Pharma Marketing Newsfeed</h1>
+    <p>Daily pharmaceutical marketing intelligence & industry insights</p>
+    <div class="update-date">Updated: May 4, 2026</div>
+  </div>
 
-            <!-- NETHERLANDS SECTION -->
-            <div class="section">
-                <div class="section-title">🇳🇱 Netherlands</div>
-                <div class="news-grid">
-                    <div class="news-card">
-                        <span class="tag">NL</span>
-                        <h3>CBG-MEB Updates Marketing Authorisation Rules</h3>
-                        <p>Effective January 1, 2026, the Medicines Evaluation Board increased fees and issued new directives on duplex marketing authorisation procedures, with key updates addressing technical requirements for pharmaceutical product information leaflets.</p>
-                        <div class="news-source"><a href="https://english.cbg-meb.nl/">CBG-MEB</a></div>
-                    </div>
+  <div class="content">
+    <!-- NETHERLANDS SECTION -->
+    <div class="section">
+      <div class="section-header">Netherlands</div>
 
-                    <div class="news-card">
-                        <span class="tag">NL</span>
-                        <h3>Platform Technologies Lead 2026 Dutch Pharma Innovation</h3>
-                        <p>The CBG-MEB's 2025-2029 Science Policy emphasizes platform technologies as a cornerstone of Dutch pharmaceutical development, with vaccines, antisense oligonucleotides, and advanced therapy medicinal products gaining regulatory traction.</p>
-                        <div class="news-source"><a href="https://english.cbg-meb.nl/">CBG-MEB</a></div>
-                    </div>
-                </div>
-            </div>
+      <div class="news-item nl">
+        <span class="tag nl">NL</span>
+        <div class="headline">Dutch Pharmacists Association (KNMP) Launches Public Campaign on Medication Safety</div>
+        <div class="summary">The Royal Dutch Pharmacists Association continues its "Samen met je apotheker" (Together with your pharmacist) public awareness initiative, positioning pharmacists as medication specialists in healthcare. The campaign aims to strengthen public trust in pharmaceutical counseling and medication management across the Netherlands.</div>
+        <div class="source">Source: <a href="https://www.knmp.nl/actueel/nieuws" target="_blank">KNMP News</a></div>
+      </div>
 
-            <!-- EUROPE SECTION -->
-            <div class="section">
-                <div class="section-title">🇪🇺 Europe</div>
-                <div class="news-grid">
-                    <div class="news-card">
-                        <span class="tag">EU</span>
-                        <h3>EU Pharmaceutical Legislation Overhaul Reshapes Marketing</h3>
-                        <p>The most significant pharmaceutical regulation reform in two decades enters into force in 2026, with a transition period through 2028 allowing Member States to align national laws affecting marketing authorization and advertising compliance.</p>
-                        <div class="news-source"><a href="https://www.ema.europa.eu/">EMA</a></div>
-                    </div>
-
-                    <div class="news-card">
-                        <span class="tag">EU</span>
-                        <h3>EMA Grants Standard Marketing Authorizations for COVID-19 Vaccines</h3>
-                        <p>The EMA recommended standard marketing authorizations for Comirnaty and Spikevax, reflecting long-term safety data and signaling maturation in pandemic vaccine programs with updated marketing strategies for established biologics.</p>
-                        <div class="news-source"><a href="https://www.ema.europa.eu/">EMA</a></div>
-                    </div>
-
-                    <div class="news-card">
-                        <span class="tag">EU</span>
-                        <h3>Digital Medicines Information Expands Across Europe</h3>
-                        <p>EFPIA, AESGP, and Medicines for Europe launched comprehensive electronic Product Information (ePI) pilot projects across 31 nations, standardizing digital medicines information for improved marketing and patient education accessibility.</p>
-                        <div class="news-source"><a href="https://www.efpia.eu/">EFPIA</a></div>
-                    </div>
-
-                    <div class="news-card">
-                        <span class="tag">EU</span>
-                        <h3>ECRD 2026 Focuses on Rare Disease Marketing in Prague</h3>
-                        <p>The European Conference on Rare Diseases returns June 3–4, 2026, bringing together regulators, industry leaders, and patient advocates to discuss marketing strategies and market access for orphan drugs.</p>
-                        <div class="news-source"><a href="https://www.efpia.eu/">EFPIA</a></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- GLOBAL SECTION -->
-            <div class="section">
-                <div class="section-title">🌍 Global</div>
-                <div class="news-grid">
-                    <div class="news-card">
-                        <span class="tag">Global</span>
-                        <h3>Merck Invests $1B with Google Cloud in Agentic AI</h3>
-                        <p>Merck announced a $1 billion partnership with Google Cloud (April 22) to deploy agentic AI across commercial operations, enabling autonomous HCP content creation and delivery at scale—a major industry shift toward AI-as-executor.</p>
-                        <div class="news-source"><a href="https://www.fiercepharma.com/">FiercePharma</a></div>
-                    </div>
-
-                    <div class="news-card">
-                        <span class="tag">Global</span>
-                        <h3>FDA Escalates Enforcement on Misleading Drug Ads</h3>
-                        <p>The FDA sent thousands of warning letters in recent months—exceeding a decade's prior volume—targeting Eli Lilly, Novo Nordisk, and Hims for misleading advertising. The agency requests new authority in its 2027 budget to enforce "fair balance."</p>
-                        <div class="news-source"><a href="https://www.fiercepharma.com/">FiercePharma</a></div>
-                    </div>
-
-                    <div class="news-card">
-                        <span class="tag">Global</span>
-                        <h3>Digital Pharma Ad Spending Surpasses Traditional TV</h3>
-                        <p>For the first time, pharmaceutical digital advertising spending exceeds linear TV investment in 2026. Digital display/video grows 70% YoY, while connected TV grows 60%, reshaping pharma media strategies under regulatory pressure.</p>
-                        <div class="news-source"><a href="https://www.fiercepharma.com/">FiercePharma</a></div>
-                    </div>
-
-                    <div class="news-card">
-                        <span class="tag">Global</span>
-                        <h3>Novo & Eli Lilly Obesity Pill Competition Heats Up</h3>
-                        <p>Novo Nordisk's Wegovy pill achieved record launch numbers (600,000+ prescriptions), while Eli Lilly competes aggressively. Combined obesity medications project $29B annual sales by 2032—dramatically reshaping pharma marketing budgets.</p>
-                        <div class="news-source"><a href="https://www.fiercepharma.com/">FiercePharma</a></div>
-                    </div>
-
-                    <div class="news-card">
-                        <span class="tag">Global</span>
-                        <h3>AI-Powered Influencers Challenge Pharma Compliance</h3>
-                        <p>Agentic AI-powered influencers are becoming industry-wide, raising regulatory and ethical questions. Virtual personas must meet FDA and FTC standards while maintaining authenticity in HCP engagement.</p>
-                        <div class="news-source"><a href="https://www.pharmavoice.com/">PharmaVoice</a></div>
-                    </div>
-
-                    <div class="news-card">
-                        <span class="tag">Global</span>
-                        <h3>Glenmark Takes Direct Control of Ryaltris Marketing</h3>
-                        <p>Glenmark announced a direct US marketing strategy for Ryaltris (April 16), moving away from partnership models to in-house management, reflecting broader pharma integration of marketing functions.</p>
-                        <div class="news-source"><a href="https://www.fiercepharma.com/">FiercePharma</a></div>
-                    </div>
-
-                    <div class="news-card">
-                        <span class="tag">Global</span>
-                        <h3>FTC Expands Pharma Promotion Rules to Social Media</h3>
-                        <p>The FTC expanded pharmaceutical advertising rules to include social media, influencers, and employee content. Zero tolerance for deceptive ads forces stricter compliance frameworks and AI-driven pre-approval systems in 2026.</p>
-                        <div class="news-source"><a href="https://www.pharma-mkting.com/">Pharma Marketing Network</a></div>
-                    </div>
-
-                    <div class="news-card">
-                        <span class="tag">Global</span>
-                        <h3>26th DTC Conference Returns to Boston</h3>
-                        <p>PM360's flagship Direct-to-Consumer conference returns April 21–23, 2026, in Boston with industry leaders, awards, and AI strategy sessions shaping 2026 patient engagement approaches.</p>
-                        <div class="news-source"><a href="https://pm360online.com/">PM360</a></div>
-                    </div>
-
-                    <div class="news-card">
-                        <span class="tag">Global</span>
-                        <h3>Dawnzera Wins Fierce Madness Drug Name Tournament</h3>
-                        <p>Ionis' hereditary angioedema treatment Dawnzera narrowly defeated Tryngolza (51.2% vs. 48.8%) in the 2026 championship, underscoring brand naming's critical role in pharma marketing perception and recall.</p>
-                        <div class="news-source"><a href="https://www.fiercepharma.com/">FiercePharma</a></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TRENDS SECTION -->
-            <div class="trends-section">
-                <h2>Trends to Watch</h2>
-                <ul>
-                    <li><strong>Agentic AI Automation:</strong> Pharma shifts from AI-as-analyst to AI-as-executor, with autonomous systems managing campaign optimization, content generation, and compliance pre-checks in real-time.</li>
-                    <li><strong>Regulatory Tightening & Digital Expansion:</strong> DTC television faces mounting pressure while digital and CTV channels accelerate. CMOs balance compliance risks with budget migration to digital channels.</li>
-                    <li><strong>Personalization via HCP/Patient Profiling:</strong> Digital twins test messaging against specific segments before launch, improving relevance while reducing compliance violations.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- FOOTER -->
-        <div class="footer">
-            <div class="footer-sources">
-                <strong>Sources:</strong> CBG-MEB, EMA, EFPIA, FiercePharma, PharmaVoice, PM360, Pharma Marketing Network, FDA, and whitelisted pharmaceutical industry sources.
-            </div>
-            <div class="footer-note">
-                Automated daily newsfeed from whitelisted pharmaceutical marketing sources. Updated April 27, 2026.
-            </div>
-        </div>
+      <div class="news-item nl">
+        <span class="tag nl">NL</span>
+        <div class="headline">CBG-MEB Continues Regulatory Framework Updates for Medicines</div>
+        <div class="summary">The Dutch Medicines Evaluation Board (CBG-MEB) has reinforced marketing authorization requirements, including mandatory registration in the EMA's Organization Management Service (OMS) database for all marketing authorization holders, manufacturers, and distributors as of January 2022.</div>
+        <div class="source">Source: <a href="https://english.cbg-meb.nl/topics/marketing-authorisation-medicines-for-human-use" target="_blank">CBG-MEB</a></div>
+      </div>
     </div>
+
+    <!-- EUROPE SECTION -->
+    <div class="section">
+      <div class="section-header">Europe</div>
+
+      <div class="news-item eu">
+        <span class="tag eu">EU</span>
+        <div class="headline">EMA Marks Strong 2025 with 104 Medicine Recommendations for Marketing Authorization</div>
+        <div class="summary">The European Medicines Agency recommended 104 medicines for marketing authorization in 2025, with 38 representing new active substances never before authorized in the European Union. The recommendations reflect robust pharmaceutical innovation and regulatory efficiency across Europe.</div>
+        <div class="source">Source: <a href="https://www.ema.europa.eu/en/news/meeting-highlights-committee-medicinal-products-human-use-chmp-23-26-march-2026" target="_blank">EMA News</a></div>
+      </div>
+
+      <div class="news-item eu">
+        <span class="tag eu">EU</span>
+        <div class="headline">EFPIA Emphasizes Accurate, Balanced Pharmaceutical Promotion Standards</div>
+        <div class="summary">The European Federation of Pharmaceutical Industries and Associations (EFPIA) reaffirms that pharmaceutical promotion must be accurate, balanced, honest, and objective. The guidance ensures healthcare professionals can independently judge therapeutic value and reflects the unique nature of medicinal product communication.</div>
+        <div class="source">Source: <a href="https://www.efpia.eu/news-events/the-efpia-view/blog-articles/the-legitimate-need-of-promotion-in-the-pharmaceutical-industry-guest-blog/" target="_blank">EFPIA</a></div>
+      </div>
+
+      <div class="news-item eu">
+        <span class="tag eu">EU</span>
+        <div class="headline">Digital Marketing Strategies Challenge European Pharma Companies</div>
+        <div class="summary">European Pharmaceutical Review reports that pharma companies are struggling to tailor digital marketing messages to individual healthcare providers, missing critical personalization opportunities in the evolving digital landscape. Solutions focusing on provider-specific engagement are emerging as key differentiators.</div>
+        <div class="source">Source: <a href="https://www.europeanpharmaceuticalreview.com/article/115336/digitalising-marketing-to-physicians-what-pharma-needs-to-know/" target="_blank">European Pharmaceutical Review</a></div>
+      </div>
+    </div>
+
+    <!-- GLOBAL SECTION -->
+    <div class="section">
+      <div class="section-header">Global</div>
+
+      <div class="news-item global">
+        <span class="tag global">Global</span>
+        <div class="headline">FDA Launches Unprecedented Crackdown on Deceptive Drug Advertising</div>
+        <div class="summary">The FDA has intensified enforcement against misleading direct-to-consumer pharmaceutical advertisements, dispatching thousands of warning letters over six months—more than the entire preceding decade. The agency reports that 88% of advertisements for top-selling drugs violate FDA fair-balance guidelines.</div>
+        <div class="source">Source: <a href="https://www.fda.gov/news-events/press-announcements/fda-launches-crackdown-deceptive-drug-advertising" target="_blank">FDA News</a></div>
+      </div>
+
+      <div class="news-item global">
+        <span class="tag global">Global</span>
+        <div class="headline">FDA Warns 30 Telehealth Companies Against Illegal GLP-1 Marketing</div>
+        <div class="summary">The FDA issued warning letters to 30 telehealth companies marketing compounded GLP-1 drugs illegally. This marks the second enforcement wave targeting misleading direct-to-consumer pharmaceutical advertising, signaling the agency's commitment to protecting consumers from false claims in digital channels.</div>
+        <div class="source">Source: <a href="https://www.fda.gov/news-events/press-announcements/fda-warns-30-telehealth-companies-against-illegal-marketing-compounded-glp-1s" target="_blank">FDA News</a></div>
+      </div>
+
+      <div class="news-item global">
+        <span class="tag global">Global</span>
+        <div class="headline">Pharma TV Ad Spending Drops in May as Migration from Linear TV Accelerates</div>
+        <div class="summary">May 2026 saw the top 10 pharma brands spend $221.1 million on TV drug advertising, continuing a downward trend as companies shift investment away from traditional television. AbbVie's Skyrizi led spending, followed by Dupixent and Tremfya, reflecting a strategic pivot toward digital channels.</div>
+        <div class="source">Source: <a href="https://www.fiercepharma.com/marketing/tv-drug-ad-spending-continued-downward-slope-may-abbvies-skyrizi-hanging-top-spot" target="_blank">FiercePharma</a></div>
+      </div>
+
+      <div class="news-item global">
+        <span class="tag global">Global</span>
+        <div class="headline">2026 Forecast: Pharma Advertising Dollars Continue Shifting from Traditional TV</div>
+        <div class="summary">Industry analysis shows pharma companies are reallocating advertising budgets away from traditional television toward digital and emerging channels. The trend reflects changing consumer media consumption patterns and the need for more targeted, personalized pharmaceutical marketing approaches.</div>
+        <div class="source">Source: <a href="https://www.fiercepharma.com/marketing/2026-forecast-pharma-ad-dollars-will-continue-shifting-away-traditional-tv" target="_blank">FiercePharma</a></div>
+      </div>
+
+      <div class="news-item global">
+        <span class="tag global">Global</span>
+        <div class="headline">AI Shifts from Analysis to Action in Pharmaceutical Marketing</div>
+        <div class="summary">Pharmaceutical companies are moving beyond analytical AI applications toward actionable AI-driven marketing strategies. Machine learning is enabling teams to understand why certain messages underperform and adjust campaigns in real-time, transforming the omnichannel marketing ecosystem in 2026.</div>
+        <div class="source">Source: <a href="https://www.pharmavoice.com/spons/2026-the-year-ais-role-in-pharma-shifts-from-analysis-to-action/" target="_blank">PharmaVoice</a></div>
+      </div>
+
+      <div class="news-item global">
+        <span class="tag global">Global</span>
+        <div class="headline">Novo Nordisk's Wegovy Reduces TV Ad Spend Amid Evolving Marketing Strategy</div>
+        <div class="summary">Novo Nordisk cut Wegovy TV advertising spend by 24% between April and May 2026, from $31.6 million to $24.1 million. The reduction underscores the industry's broader shift toward digital and omnichannel strategies over traditional broadcast media investment.</div>
+        <div class="source">Source: <a href="https://www.fiercepharma.com/marketing/novos-wegovy-pill-spot-mvp-pharma-super-bowl-engagement-while-novartis-scores-likeability" target="_blank">FiercePharma</a></div>
+      </div>
+
+      <div class="news-item global">
+        <span class="tag global">Global</span>
+        <div class="headline">PharmaMarketing Summit 2026 Convenes May 14-15 in San Diego</div>
+        <div class="summary">Marcus Evans is hosting an exclusive PharmaMarketing Summit bringing together leading pharmaceutical marketing executives with innovative suppliers. The May 14-15 event in San Diego focuses on industry trends, simplification strategies, and meaningful healthcare provider engagement in an increasingly digital landscape.</div>
+        <div class="source">Source: <a href="https://pm360online.com/marcus-evans-announces-the-pharmamarketing-summit-2026-a-premier-gathering-for-pharmaceutical-marketing-executives/" target="_blank">PM360</a></div>
+      </div>
+
+      <div class="news-item global">
+        <span class="tag global">Global</span>
+        <div class="headline">FDA Hosts REdI Conference on Innovative Regulatory Strategies May 19-20</div>
+        <div class="summary">The FDA's Regulatory Education for Industry (REdI) Annual Conference 2026 convenes May 19-20, featuring discussions on innovative regulatory strategies to advance medical products. The conference brings industry stakeholders together to address emerging challenges in drug advertising and regulatory compliance.</div>
+        <div class="source">Source: <a href="https://www.fda.gov/news-events/regulatory-education-industry-redi-annual-conference-2026-innovative-regulatory-strategies-advance" target="_blank">FDA News</a></div>
+      </div>
+    </div>
+
+    <!-- TRENDS TO WATCH -->
+    <div class="trends-section">
+      <h3>📈 Trends to Watch</h3>
+      <div class="trend-item"><strong>Digital-First Marketing:</strong> The pharmaceutical industry's migration away from traditional TV accelerates as companies invest heavily in targeted digital strategies and omnichannel engagement. AI-powered personalization is becoming essential for reaching healthcare professionals and patients effectively.</div>
+      <div class="trend-item"><strong>Regulatory Enforcement Intensity:</strong> FDA enforcement actions on misleading drug advertising have reached unprecedented levels. Pharma companies must prioritize compliance across all channels, especially digital and social media, where fair-balance requirements are frequently violated.</div>
+      <div class="trend-item"><strong>Simplified Engagement Strategies:</strong> Industry leaders are adopting "less is more" marketing philosophies in 2026, removing unnecessary digital layers and focusing on meaningful, simplified engagement that delivers ROI rather than marketing complexity.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-title">About This Newsfeed</div>
+    <p>This pharmaceutical marketing newsfeed aggregates the latest industry developments from whitelisted sources including: Pharma.nl, CBG-MEB, KNMP, Health~Holland, EMA, EFPIA, Pharmaceutical Technology Europe, European Pharmaceutical Review, FiercePharma, PM360, PharmaVoice, and the FDA.</p>
+    <p style="margin-top: 15px;">Content is curated daily and prioritizes news from the Netherlands, followed by European, and then global pharmaceutical marketing developments. Updated: <strong>May 4, 2026</strong></p>
+    <p style="margin-top: 15px; color: #999; font-size: 11px;">© 2026 Pharma Marketing Newsfeed. All sources linked for verification and further reading.</p>
+  </div>
+</div>
+
 </body>
 </html>
