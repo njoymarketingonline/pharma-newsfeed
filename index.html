@@ -3,149 +3,263 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pharma Marketing Daily — Newsfeed</title>
+<title>Pharma Marketing Daily — June 22, 2026</title>
 <style>
-  :root{
-    --navy:#0b3d5c; --teal:#0f8a8d; --accent:#1b9aaa; --bg:#f5f7f9;
-    --card:#ffffff; --ink:#1f2d3d; --muted:#5b6b7b; --line:#e3e9ee;
-    --nl:#cf2e2e; --eu:#1f5fa8; --global:#2f7d4f;
+  :root {
+    --navy: #0b3a66;
+    --teal: #0e7c7b;
+    --bg: #f4f7fa;
+    --card: #ffffff;
+    --ink: #1f2933;
+    --muted: #5b6b7b;
+    --line: #e2e8f0;
+    --nl: #d97706;
+    --eu: #2563eb;
+    --global: #0e7c7b;
   }
-  *{box-sizing:border-box;}
-  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    background:var(--bg);color:var(--ink);line-height:1.55;}
-  .wrap{max-width:880px;margin:0 auto;padding:0 18px 56px;}
-  header{background:linear-gradient(135deg,var(--navy),var(--teal));color:#fff;padding:34px 0 28px;}
-  header .wrap{padding-bottom:0;}
-  .brand{font-size:13px;letter-spacing:2px;text-transform:uppercase;opacity:.85;margin:0;}
-  h1{margin:6px 0 4px;font-size:30px;font-weight:700;}
-  .date{font-size:15px;opacity:.92;margin:0;}
-  .intro{background:var(--card);border:1px solid var(--line);border-radius:10px;
-    padding:18px 20px;margin:26px 0 10px;font-size:15.5px;color:var(--muted);}
-  .intro strong{color:var(--ink);}
-  h2.section{font-size:20px;margin:32px 0 6px;padding-bottom:8px;border-bottom:2px solid var(--line);color:var(--navy);}
-  .item{background:var(--card);border:1px solid var(--line);border-radius:10px;
-    padding:16px 18px;margin:14px 0;box-shadow:0 1px 2px rgba(20,40,60,.04);}
-  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.5px;
-    color:#fff;padding:2px 9px;border-radius:20px;vertical-align:middle;margin-right:8px;}
-  .tag.nl{background:var(--nl);} .tag.eu{background:var(--eu);} .tag.global{background:var(--global);}
-  .item h3{display:inline;font-size:16.5px;margin:0;color:var(--ink);}
-  .item p{margin:8px 0 6px;font-size:14.5px;color:var(--muted);}
-  .item a.src{font-size:13px;color:var(--accent);text-decoration:none;font-weight:600;}
-  .item a.src:hover{text-decoration:underline;}
-  .trends{background:#eef6f6;border:1px solid #cfe6e6;border-radius:10px;padding:18px 22px;margin-top:26px;}
-  .trends h2{margin-top:0;color:var(--teal);font-size:19px;border:none;}
-  .trends ul{margin:6px 0 0;padding-left:20px;}
-  .trends li{margin-bottom:9px;font-size:14.5px;color:var(--ink);}
-  footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);}
-  footer a{color:var(--accent);text-decoration:none;}
-  @media(max-width:560px){h1{font-size:24px;}.wrap{padding:0 14px 40px;}}
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  header.site {
+    background: linear-gradient(135deg, var(--navy), var(--teal));
+    color: #fff;
+    padding: 32px 20px 28px;
+    text-align: center;
+  }
+  header.site h1 { margin: 0; font-size: 1.9rem; letter-spacing: -0.3px; }
+  header.site p { margin: 6px 0 0; opacity: 0.92; font-size: 0.98rem; }
+  .date-badge {
+    display: inline-block;
+    margin-top: 14px;
+    background: rgba(255,255,255,0.16);
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  main { max-width: 820px; margin: 0 auto; padding: 24px 16px 48px; }
+  .intro {
+    background: var(--card);
+    border-left: 4px solid var(--teal);
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin-bottom: 28px;
+    color: var(--muted);
+    font-size: 0.98rem;
+  }
+  h2.section {
+    font-size: 1.25rem;
+    color: var(--navy);
+    border-bottom: 2px solid var(--line);
+    padding-bottom: 8px;
+    margin: 34px 0 16px;
+  }
+  .item {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 2px rgba(16,24,40,0.04);
+  }
+  .item h3 { margin: 6px 0 6px; font-size: 1.05rem; line-height: 1.35; }
+  .item h3 a { color: var(--navy); text-decoration: none; }
+  .item h3 a:hover { text-decoration: underline; }
+  .item p { margin: 0 0 8px; color: var(--muted); font-size: 0.94rem; }
+  .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .tag.nl { background: var(--nl); }
+  .tag.eu { background: var(--eu); }
+  .tag.global { background: var(--global); }
+  .src { font-size: 0.8rem; color: var(--teal); font-weight: 600; text-decoration: none; }
+  .src:hover { text-decoration: underline; }
+  .trends {
+    background: linear-gradient(135deg, #0b3a66, #134e4a);
+    color: #fff;
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-top: 36px;
+  }
+  .trends h2 { margin: 0 0 14px; font-size: 1.2rem; }
+  .trends .trend { margin-bottom: 14px; }
+  .trends .trend strong { display: block; font-size: 1rem; margin-bottom: 3px; }
+  .trends .trend span { opacity: 0.9; font-size: 0.92rem; }
+  footer {
+    margin-top: 40px;
+    padding: 22px 16px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.82rem;
+    border-top: 1px solid var(--line);
+  }
+  footer a { color: var(--teal); text-decoration: none; }
+  @media (max-width: 600px) {
+    header.site h1 { font-size: 1.5rem; }
+    main { padding: 18px 12px 40px; }
+  }
 </style>
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <p class="brand">Pharma Marketing Daily</p>
-    <h1>Industry Newsfeed</h1>
-    <p class="date">Thursday, 18 June 2026</p>
-  </div>
+<header class="site">
+  <h1>Pharma Marketing Daily</h1>
+  <p>Netherlands · Europe · Global — curated marketing &amp; regulatory intelligence</p>
+  <div class="date-badge">Monday, June 22, 2026</div>
 </header>
 
-<div class="wrap">
+<main>
   <div class="intro">
-    <strong>Today's lead:</strong> The Dutch Medicines Evaluation Board (CBG-MEB) is replacing and modernising its medicine registration systems, promising faster, more automated dossier handling for marketing-authorisation holders — a quiet but consequential shift for anyone bringing products to the Dutch market. Meanwhile, Europe edges toward digital product information and the U.S. FDA presses on with its crackdown on misleading direct-to-consumer ads.
+    Today's lead: the <strong>EU pharmaceutical legislation reform</strong>—the biggest overhaul of the
+    framework in over two decades—is entering into force in 2026 with a transition window to 2028, reshaping
+    how medicines are authorised, marketed and made available across Europe. Meanwhile the Dutch CBG-MEB
+    has raised its fees and refreshed its variation guidance, and global marketers are recalibrating around
+    tighter DTC enforcement and an "agentic" shift in AI.
   </div>
 
   <h2 class="section">🇳🇱 Netherlands</h2>
 
   <div class="item">
-    <span class="tag nl">NL</span><h3>CBG replaces and modernises its registration systems</h3>
-    <p>The CBG is overhauling the systems used to process medicine registration applications and manage dossiers, enabling more efficient and partly automated handling. Marketing-authorisation holders will notice small interface changes in the coming period.</p>
-    <a class="src" href="https://www.cbg-meb.nl/actueel/nieuws/2026/06/01/cbg-vervangt-en-moderniseert-registratiesystemen" target="_blank" rel="noopener">Source: CBG-MEB</a>
+    <span class="tag nl">NL</span>
+    <h3><a href="https://english.cbg-meb.nl/">CBG-MEB raises fees for 2026 and updates variation guidance</a></h3>
+    <p>Effective 1 January 2026 the Medicines Evaluation Board increased its fees, and on 3 June it published
+    fresh Q&amp;A documents on variations for human medicines—both with direct cost and compliance implications
+    for marketing-authorisation holders.</p>
+    <a class="src" href="https://english.cbg-meb.nl/topics/marketing-authorisation-marketing-authorisation-procedures/mah-variation">Source: CBG-MEB</a>
   </div>
 
   <div class="item">
-    <span class="tag nl">NL</span><h3>CBG names four challenges in its "Stand van de Uitvoering"</h3>
-    <p>The Dutch regulator flags new European legislation, medicine availability, data exchange, and rising misinformation as its key operational challenges — a useful signal of where compliance and communications scrutiny is heading.</p>
-    <a class="src" href="https://www.cbg-meb.nl/actueel/nieuws/2026/06/16/vier-uitdagingen-uit-de-stand-van-de-uitvoering" target="_blank" rel="noopener">Source: CBG-MEB</a>
+    <span class="tag nl">NL</span>
+    <h3><a href="https://www.health-holland.com/events/2026/06/bio-international-convention">Dutch life-sciences sector showcases at BIO International Convention</a></h3>
+    <p>Health~Holland is anchoring the Netherlands' presence at BIO International (June 22–25), one of the
+    largest global biotech gatherings—prime ground for partnering, brand visibility and investor messaging.</p>
+    <a class="src" href="https://www.health-holland.com/events/2026/06/bio-international-convention">Source: Health~Holland</a>
   </div>
 
   <div class="item">
-    <span class="tag nl">NL</span><h3>KNMP rolls out 'Samen met je apotheker' social-media assets</h3>
-    <p>The Royal Dutch Pharmacists Association is supplying ready-to-use campaign images and personalised press materials so pharmacies can boost their visibility as medication specialists on local social channels.</p>
-    <a class="src" href="https://www.knmp.nl/actueel/nieuws/campagnebeelden-samen-met-je-apotheker-te-gebruiken-voor-sociale-media" target="_blank" rel="noopener">Source: KNMP</a>
+    <span class="tag nl">NL</span>
+    <h3><a href="https://www.health-holland.com/events/2026/06/knowledge-growth">Knowledge for Growth &amp; Health Innovation Euregion put Dutch innovation on stage</a></h3>
+    <p>Two flagship June events—Knowledge for Growth and the fifth Health Innovation Euregion at MECC
+    Maastricht—offer Dutch and cross-border pharma a platform to launch positioning and forge partnerships.</p>
+    <a class="src" href="https://www.health-holland.com/events/2026/06/health-innovation-euregion-2026">Source: Health~Holland</a>
   </div>
 
   <div class="item">
-    <span class="tag nl">NL</span><h3>Health~Holland opens €12M SME Call 2026 for life-sciences R&D</h3>
-    <p>The public-private partnership has earmarked roughly €12 million for its 2026 SME Call (plus €5M+ via the Science for Industry Call), prioritising AI, data science, biomolecular and imaging technologies — funding opportunities for smaller health innovators.</p>
-    <a class="src" href="https://www.health-holland.com/funding-opportunities" target="_blank" rel="noopener">Source: Health~Holland</a>
+    <span class="tag nl">NL</span>
+    <h3><a href="https://farmanco.knmp.nl/tekorten-uitgelegd">KNMP keeps medicine shortages in the spotlight via Farmanco</a></h3>
+    <p>The Royal Dutch Pharmacists Association continues to track and explain drug shortages through Farmanco—
+    a reminder that supply transparency is now a core part of trustworthy brand and access communication.</p>
+    <a class="src" href="https://farmanco.knmp.nl/tekorten-uitgelegd">Source: KNMP / Farmanco</a>
   </div>
 
   <h2 class="section">🇪🇺 Europe</h2>
 
   <div class="item">
-    <span class="tag eu">EU</span><h3>EU pharmaceutical legislation reform set to enter into force in 2026</h3>
-    <p>The most significant overhaul of the EU regulatory framework in two decades begins this year, with a transition period to 2028 for member states to align national laws — reshaping how medicines are authorised, communicated and made available.</p>
-    <a class="src" href="https://www.ema.europa.eu/en/about-us/what-we-do/reform-eu-pharmaceutical-legislation" target="_blank" rel="noopener">Source: EMA</a>
+    <span class="tag eu">EU</span>
+    <h3><a href="https://www.ema.europa.eu/en/about-us/what-we-do/reform-eu-pharmaceutical-legislation">EU pharma legislation reform enters force in 2026</a></h3>
+    <p>The most significant overhaul in over two decades modernises how medicines are developed, authorised and
+    made available across the EU, with a transition period running to 2028—reshaping market-access and
+    promotional planning for every brand operating in Europe.</p>
+    <a class="src" href="https://www.ema.europa.eu/en/about-us/what-we-do/reform-eu-pharmaceutical-legislation">Source: EMA</a>
   </div>
 
   <div class="item">
-    <span class="tag eu">EU</span><h3>Digital medicines information (ePI) gains momentum across 31 countries</h3>
-    <p>A joint AESGP, EFPIA and Medicines for Europe report maps electronic Product Information pilots in 31 countries as Europe prepares to move from paper leaflets to digital — a structural change for patient-facing and HCP content strategy.</p>
-    <a class="src" href="https://www.efpia.eu/news-events/the-efpia-view/statements-press-releases/digital-medicines-information-gains-momentum/" target="_blank" rel="noopener">Source: EFPIA</a>
+    <span class="tag eu">EU</span>
+    <h3><a href="https://www.efpia.eu/news-events/the-efpia-view/statements-press-releases/efpia-response-to-pharmaceutical-package-agreement-more-to-do-to-keep-european-pharma-competitive/">EFPIA: more needed to keep European pharma competitive</a></h3>
+    <p>Responding to the pharmaceutical package agreement, EFPIA warns competitiveness gaps remain even as the
+    sector invests €55bn a year in EU R&amp;D and generates €320bn in exports—framing the policy narrative
+    marketers will navigate.</p>
+    <a class="src" href="https://www.efpia.eu/news-events/the-efpia-view/statements-press-releases/efpia-response-to-pharmaceutical-package-agreement-more-to-do-to-keep-european-pharma-competitive/">Source: EFPIA</a>
   </div>
 
   <div class="item">
-    <span class="tag eu">EU</span><h3>EMA advances the European Shortages Monitoring Platform</h3>
-    <p>Highlights from the March 2026 Management Board confirm progress on the ESMP, with machine-to-machine data sharing between national authorities and MAHs to automate shortage monitoring and reporting across the EU.</p>
-    <a class="src" href="https://www.ema.europa.eu/en/news/ema-management-board-highlights-march-2026-meeting" target="_blank" rel="noopener">Source: EMA</a>
-  </div>
-
-  <div class="item">
-    <span class="tag eu">EU</span><h3>EFPIA defends the 'legitimate need' for promotion in pharma</h3>
-    <p>An EFPIA guest blog re-states the case for compliant, professional-directed promotion as the EU's self-regulatory framework comes under renewed examination amid the legislative reform.</p>
-    <a class="src" href="https://www.efpia.eu/news-events/the-efpia-view/blog-articles/the-legitimate-need-of-promotion-in-the-pharmaceutical-industry-guest-blog/" target="_blank" rel="noopener">Source: EFPIA</a>
+    <span class="tag eu">EU</span>
+    <h3><a href="https://www.efpia.eu/about-medicines/access-to-medicines/back-innovation-boost-access/">Patients W.A.I.T. Indicator: access still varies 7x across Europe</a></h3>
+    <p>EFPIA data show patient access to authorised medicines ranges from 4 months to 2.5 years depending on
+    country—an equity gap that shapes how and where brands communicate value.</p>
+    <a class="src" href="https://www.efpia.eu/about-medicines/access-to-medicines/back-innovation-boost-access/">Source: EFPIA</a>
   </div>
 
   <h2 class="section">🌍 Global</h2>
 
   <div class="item">
-    <span class="tag global">Global</span><h3>FDA escalates crackdown on deceptive direct-to-consumer ads</h3>
-    <p>HHS and the FDA have sent thousands of warning letters and ~100 cease-and-desist letters, and are moving to close the 1997 "adequate provision" loophole used to downplay safety risks in broadcast and digital drug ads.</p>
-    <a class="src" href="https://www.fda.gov/news-events/press-announcements/fda-launches-crackdown-deceptive-drug-advertising" target="_blank" rel="noopener">Source: FDA</a>
+    <span class="tag global">Global</span>
+    <h3><a href="https://www.fda.gov/news-events/press-announcements/fda-launches-crackdown-deceptive-drug-advertising">FDA launches crackdown on deceptive drug advertising</a></h3>
+    <p>The FDA has sent thousands of letters demanding removal of misleading ads—more than in the entire prior
+    decade—and is moving to close the 1997 "adequate provision" loophole, raising the compliance bar for DTC.</p>
+    <a class="src" href="https://www.fda.gov/news-events/press-announcements/fda-launches-crackdown-deceptive-drug-advertising">Source: FDA</a>
   </div>
 
   <div class="item">
-    <span class="tag global">Global</span><h3>2026 forecast: pharma ad dollars keep shifting from TV to digital</h3>
-    <p>Healthcare and pharma digital ad spend is projected to reach $26.2B in 2026 while traditional spend slips to ~$6.9B; social media is set to outpace linear TV as DTP (direct-to-patient) programmes expand.</p>
-    <a class="src" href="https://www.fiercepharma.com/marketing/2026-forecast-pharma-ad-dollars-will-continue-shifting-away-traditional-tv" target="_blank" rel="noopener">Source: Fierce Pharma</a>
+    <span class="tag global">Global</span>
+    <h3><a href="https://www.fiercepharma.com/marketing/trump-directs-fda-limit-dtc-drug-advertising-legal-challenges-sure-follow">Administration directs FDA to limit DTC drug advertising</a></h3>
+    <p>New direction to tighten direct-to-consumer rules—with legal challenges expected—signals sustained
+    regulatory pressure on pharma promotion through 2026 and beyond.</p>
+    <a class="src" href="https://www.fiercepharma.com/marketing/trump-directs-fda-limit-dtc-drug-advertising-legal-challenges-sure-follow">Source: FiercePharma</a>
   </div>
 
   <div class="item">
-    <span class="tag global">Global</span><h3>Merck's new AI commercial strategy reimagines HCP engagement</h3>
-    <p>Merck is building an integrated, agentic AI "digital backbone" to deliver more personalised, relevant information to doctors and health systems faster — a marker of where large-pharma omnichannel marketing is heading.</p>
-    <a class="src" href="https://www.fiercepharma.com/marketing/mercks-new-ai-commercial-strategy-reimagining-engagement-hcps" target="_blank" rel="noopener">Source: Fierce Pharma</a>
+    <span class="tag global">Global</span>
+    <h3><a href="https://www.fiercepharma.com/marketing/2026-forecast-pharma-ad-dollars-will-continue-shifting-away-traditional-tv">2026 forecast: ad dollars keep migrating from traditional TV</a></h3>
+    <p>Pharma is steadily shifting budget from linear TV toward social, influencer and out-of-home—with tougher
+    enforcement on social platforms a key risk to manage.</p>
+    <a class="src" href="https://www.fiercepharma.com/marketing/2026-forecast-pharma-ad-dollars-will-continue-shifting-away-traditional-tv">Source: FiercePharma</a>
   </div>
 
   <div class="item">
-    <span class="tag global">Global</span><h3>2026: AI's role in pharma shifts from analysis to action</h3>
-    <p>PharmaVoice argues brands must now optimise for "share of answer" — ensuring accurate, compliant messaging surfaces inside AI-driven search — as roughly two-thirds of HCPs use AI tools daily.</p>
-    <a class="src" href="https://www.pharmavoice.com/spons/2026-the-year-ais-role-in-pharma-shifts-from-analysis-to-action/806868/" target="_blank" rel="noopener">Source: PharmaVoice</a>
+    <span class="tag global">Global</span>
+    <h3><a href="https://www.fiercepharma.com/marketing/pharma-clicks-patients-direct-sales-model-shifts-marketing-strategies">Direct-to-patient sales models reshape marketing strategy</a></h3>
+    <p>Amgen, BMS, AstraZeneca, Genentech, Novartis and Boehringer have joined Lilly, Pfizer and Novo in launching
+    self-pay DTP services—forcing marketers to rethink where DTC fits in the DTP era.</p>
+    <a class="src" href="https://www.fiercepharma.com/marketing/pharma-clicks-patients-direct-sales-model-shifts-marketing-strategies">Source: FiercePharma</a>
+  </div>
+
+  <div class="item">
+    <span class="tag global">Global</span>
+    <h3><a href="https://www.pharmavoice.com/spons/2026-the-year-ais-role-in-pharma-shifts-from-analysis-to-action/806868/">2026: AI's role in pharma shifts from analysis to action</a></h3>
+    <p>"Agentic" AI now connects data sources and acts on them, while AI-powered search creates a zero-click
+    environment—40M people ask ChatGPT a health question daily—redefining how brands earn visibility and trust.</p>
+    <a class="src" href="https://www.pharmavoice.com/spons/2026-the-year-ais-role-in-pharma-shifts-from-analysis-to-action/806868/">Source: PharmaVoice</a>
   </div>
 
   <div class="trends">
     <h2>📈 Trends to Watch</h2>
-    <ul>
-      <li><strong>From paper to pixels:</strong> Electronic Product Information (ePI) is moving from pilot to policy in Europe, which will reshape how patient leaflets and HCP materials are produced, localised and version-controlled.</li>
-      <li><strong>"Share of answer" over share of voice:</strong> As HCPs and patients query AI assistants, getting accurate, compliant brand content into those answers is becoming a core marketing discipline.</li>
-      <li><strong>Diverging ad regimes:</strong> The U.S. tightens DTC enforcement while Europe keeps its professional-only model — multinationals will need increasingly region-specific promotional playbooks.</li>
-    </ul>
+    <div class="trend">
+      <strong>Regulation tightens on both sides of the Atlantic</strong>
+      <span>The EU's once-in-a-generation legislative reform and the FDA's DTC crackdown mean compliance is
+      moving from back-office to the center of marketing strategy.</span>
+    </div>
+    <div class="trend">
+      <strong>The "agentic" AI shift &amp; zero-click discovery</strong>
+      <span>AI moves from insight to action, and AI search becomes a primary patient touchpoint—brand
+      visibility is increasingly decided before anyone reaches a website.</span>
+    </div>
+    <div class="trend">
+      <strong>Channel mix rebalances toward DTP, social and OOH</strong>
+      <span>As direct-to-patient sales scale and TV budgets shrink, marketers must blend new commercial
+      channels with airtight compliance.</span>
+    </div>
   </div>
 
   <footer>
-    <p><strong>Sources (whitelisted):</strong> CBG-MEB, KNMP, Health~Holland, EMA, EFPIA, Pharmaceutical Technology Europe, European Pharmaceutical Review, Fierce Pharma, PM360, PharmaVoice, FDA.</p>
-    <p>This is an automated daily briefing produced for NjoyMarketing. Headlines are curated from the sources above; please verify details at the linked originals before acting.</p>
+    <p><strong>Pharma Marketing Daily</strong> — an automated daily briefing.</p>
+    <p>Curated exclusively from whitelisted sources: Pharma.nl, CBG-MEB, KNMP, Health~Holland,
+    EMA, EFPIA, Pharmaceutical Technology Europe, European Pharmaceutical Review, FiercePharma,
+    PM360, PharmaVoice, FDA.gov, Reuters Health.</p>
+    <p>Generated June 22, 2026 · For internal review.</p>
   </footer>
-</div>
+</main>
 </body>
 </html>
