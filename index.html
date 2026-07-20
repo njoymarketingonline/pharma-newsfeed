@@ -3,148 +3,153 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pharma Marketing Newsfeed</title>
+<title>Pharma Marketing Newsfeed — 20 July 2026</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Segoe UI',Helvetica,Arial,sans-serif; background:#f4f7f9; color:#2b3a4a; line-height:1.6; }
-  .container { max-width:860px; margin:0 auto; padding:24px 16px; }
-  header { background:#0f4c5c; color:#fff; border-radius:10px; padding:28px 32px; margin-bottom:28px; }
-  header h1 { font-size:26px; font-weight:600; }
-  header .date { color:#cfe3e8; font-size:15px; margin-top:6px; }
-  h2.section { font-size:19px; color:#0f4c5c; border-bottom:3px solid #0f4c5c; padding-bottom:8px; margin:32px 0 16px; }
-  .item { background:#fff; border:1px solid #e3e8ec; border-radius:8px; padding:18px 22px; margin-bottom:14px; box-shadow:0 1px 3px rgba(15,76,92,0.06); }
-  .tag { display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.5px; padding:3px 9px; border-radius:12px; margin-bottom:8px; }
-  .tag-nl { background:#fde8e8; color:#c0392b; }
-  .tag-eu { background:#e8f0fd; color:#1a4fa0; }
-  .tag-global { background:#e8f7ee; color:#1e7d46; }
-  .item h3 { font-size:16.5px; margin-bottom:6px; color:#17323f; }
-  .item p { font-size:14.5px; color:#4a5a68; }
-  .item a.src { display:inline-block; margin-top:8px; font-size:13px; color:#0f7c90; text-decoration:none; font-weight:600; }
-  .item a.src:hover { text-decoration:underline; }
-  .trends { background:#fff8ec; border:1px solid #f0e2c4; border-radius:8px; padding:20px 24px; }
-  .trends h3 { font-size:15.5px; color:#8a6d1f; margin:12px 0 4px; }
-  .trends h3:first-of-type { margin-top:0; }
-  .trends p { font-size:14px; color:#5a5442; }
-  footer { margin-top:36px; padding:20px 24px; background:#eaeff2; border-radius:8px; font-size:12.5px; color:#6b7a88; }
-  @media (max-width:600px) {
-    header { padding:20px; } header h1 { font-size:21px; }
-    .item { padding:14px 16px; }
+  :root{
+    --navy:#0f4c5c; --ink:#2b3a42; --muted:#5a6b73; --bg:#f7f9fa;
+    --nl:#c05621; --eu:#2b6cb0; --gl:#4a5568; --card:#ffffff; --line:#e2e8ec;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
+  .wrap{max-width:860px;margin:0 auto;padding:0 20px 40px;}
+  header{background:var(--navy);color:#fff;padding:36px 20px;text-align:center;}
+  header h1{font-size:1.7rem;font-weight:600;letter-spacing:.5px;}
+  header .date{margin-top:8px;font-size:1rem;color:#cfe3e8;}
+  header .tagline{margin-top:4px;font-size:.85rem;color:#9fc4cd;}
+  section{margin-top:36px;}
+  h2{font-size:1.25rem;color:var(--navy);border-bottom:3px solid var(--navy);padding-bottom:6px;margin-bottom:18px;}
+  .item{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,76,92,.06);}
+  .item h3{font-size:1.05rem;margin-bottom:6px;}
+  .item p{font-size:.93rem;color:var(--muted);margin-bottom:8px;}
+  .item a{color:var(--navy);font-size:.88rem;font-weight:600;text-decoration:none;}
+  .item a:hover{text-decoration:underline;}
+  .tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.5px;padding:2px 8px;border-radius:10px;color:#fff;margin-bottom:8px;}
+  .tag-nl{background:var(--nl);} .tag-eu{background:var(--eu);} .tag-gl{background:var(--gl);}
+  .trends{background:#eaf2f4;border-left:4px solid var(--navy);border-radius:0 8px 8px 0;padding:20px 22px;}
+  .trends h3{color:var(--navy);font-size:1rem;margin-bottom:6px;}
+  .trends div+div{margin-top:14px;}
+  .trends p{font-size:.92rem;color:var(--ink);}
+  footer{margin-top:44px;border-top:1px solid var(--line);padding-top:18px;font-size:.8rem;color:var(--muted);text-align:center;}
+  @media(max-width:600px){
+    header h1{font-size:1.3rem;}
+    .item{padding:14px 16px;}
   }
 </style>
 </head>
 <body>
-<div class="container">
-  <header>
-    <h1>Pharma Marketing Newsfeed</h1>
-    <div class="date">Daily briefing &middot; Tuesday, July 7, 2026</div>
-  </header>
+<header>
+  <h1>Pharma Marketing Newsfeed</h1>
+  <div class="date">Monday, 20 July 2026</div>
+  <div class="tagline">Daily curated briefing for pharmaceutical marketing professionals</div>
+</header>
+<div class="wrap">
 
-  <h2 class="section">Netherlands</h2>
+<section>
+<h2>Netherlands</h2>
+<div class="item">
+  <span class="tag tag-nl">NL</span>
+  <h3>EU pharmaceutical legislation revision: key changes for Dutch pharmacists</h3>
+  <p>European legislators reached a preliminary political agreement on the revised EU medicines legislation, with changes affecting medicine availability, pharmacy preparations, antimicrobial stewardship and patient information provision.</p>
+  <a href="https://www.knmp.nl/actueel/nieuws/herziening-europese-geneesmiddelenwetgeving-belangrijke-wijzigingen-voor-apothekers" target="_blank" rel="noopener">Read at KNMP →</a>
+</div>
+<div class="item">
+  <span class="tag tag-nl">NL</span>
+  <h3>New work agenda targets faster resolution of medicine shortages</h3>
+  <p>Minister Hermans' "Werkagenda" contains concrete supply-chain agreements to prevent and resolve shortages faster. KNMP is positive, but chairman Miriam Stoks stresses the situation remains "code red" for patients and pharmacists.</p>
+  <a href="https://www.knmp.nl/actueel/nieuws/werkagenda-moet-bijdragen-aan-snellere-aanpak-van-geneesmiddelentekorten" target="_blank" rel="noopener">Read at KNMP →</a>
+</div>
+<div class="item">
+  <span class="tag tag-nl">NL</span>
+  <h3>CBG-MEB tightens planning: mandatory tool and new slot schedule</h3>
+  <p>Use of the MEB planning tool is now mandatory for marketing authorisation applications; slots are released every two months up to nine months ahead, and MEB fees increased per 1 January 2026.</p>
+  <a href="https://english.cbg-meb.nl/latest/news/2025/07/08/new-availability-schedule-of-time-slots" target="_blank" rel="noopener">Read at CBG-MEB →</a>
+</div>
+</section>
 
-  <div class="item">
-    <span class="tag tag-nl">NL</span>
-    <h3>KNMP welcomes national work agenda on medicine availability</h3>
-    <p>On 2 July, minister Sophie Hermans sent the Werkagenda Betere Beschikbaarheid Geneesmiddelen to the Tweede Kamer, with concrete agreements across the medicines chain to prevent and resolve shortages faster — including uniform shortage definitions and quicker reimbursement-status adjustments.</p>
-    <a class="src" href="https://www.knmp.nl/actueel/nieuws/werkagenda-moet-bijdragen-aan-snellere-aanpak-van-geneesmiddelentekorten" target="_blank" rel="noopener">Source: KNMP</a>
+<section>
+<h2>Europe</h2>
+<div class="item">
+  <span class="tag tag-eu">EU</span>
+  <h3>New EU pharmaceutical legislation set to enter into force in 2026</h3>
+  <p>The reform simplifies EMA's structure to two scientific committees (CHMP and PRAC) and introduces regulatory sandboxes for innovative and personalised medicines — the biggest overhaul of EU medicines regulation in two decades.</p>
+  <a href="https://www.ema.europa.eu/en/about-us/what-we-do/reform-eu-pharmaceutical-legislation" target="_blank" rel="noopener">Read at EMA →</a>
+</div>
+<div class="item">
+  <span class="tag tag-eu">EU</span>
+  <h3>EFPIA: "More to do to keep European pharma competitive"</h3>
+  <p>Industry federation EFPIA welcomed parts of the pharmaceutical package agreement but warns that Europe's competitiveness gap with the US and China remains unaddressed.</p>
+  <a href="https://www.efpia.eu/news-events/the-efpia-view/statements-press-releases/efpia-response-to-pharmaceutical-package-agreement-more-to-do-to-keep-european-pharma-competitive/" target="_blank" rel="noopener">Read at EFPIA →</a>
+</div>
+<div class="item">
+  <span class="tag tag-eu">EU</span>
+  <h3>CHMP recommends six new medicines for approval</h3>
+  <p>June's committee meeting produced positive opinions including flu vaccine Aujemflu (50+), Parkinson's therapy Hopledo, once-weekly insulin Onswik and two biosimilars — new launch and positioning work ahead for these brands.</p>
+  <a href="https://www.ema.europa.eu/en/news/meeting-highlights-committee-medicinal-products-human-use-chmp-22-25-june-2026" target="_blank" rel="noopener">Read at EMA →</a>
+</div>
+<div class="item">
+  <span class="tag tag-eu">EU</span>
+  <h3>EMA recommends revoking Tavneos marketing authorisation</h3>
+  <p>On 2 July the EMA concluded that benefits no longer outweigh risks for Tavneos — a reminder that marketing authorisation, and the commercial story built on it, can be withdrawn.</p>
+  <a href="https://www.ema.europa.eu/en/news" target="_blank" rel="noopener">Read at EMA →</a>
+</div>
+<div class="item">
+  <span class="tag tag-eu">EU</span>
+  <h3>EMA and HMA publish 2025 AI observatory report</h3>
+  <p>The June 2026 report maps how AI is used across the European medicines network — relevant context for agencies' expectations as pharma applies AI in evidence generation and communications.</p>
+  <a href="https://www.ema.europa.eu/en/about-us/how-we-work/data-regulation-big-data-other-sources/artificial-intelligence" target="_blank" rel="noopener">Read at EMA →</a>
+</div>
+</section>
+
+<section>
+<h2>Global</h2>
+<div class="item">
+  <span class="tag tag-gl">GLOBAL</span>
+  <h3>FDA escalates crackdown on deceptive drug advertising</h3>
+  <p>The agency has sent thousands of warning letters over six months — more than in the entire preceding decade — plus roughly 100 cease-and-desist letters, marking a dramatic shift in US promotional enforcement.</p>
+  <a href="https://www.fda.gov/news-events/press-announcements/fda-launches-crackdown-deceptive-drug-advertising" target="_blank" rel="noopener">Read at FDA →</a>
+</div>
+<div class="item">
+  <span class="tag tag-gl">GLOBAL</span>
+  <h3>FDA warns 30 telehealth companies over compounded GLP-1 marketing</h3>
+  <p>Violations included implying sameness with approved products and obscuring product sourcing under the telehealth firm's own branding — compliance lessons for anyone marketing around the GLP-1 boom.</p>
+  <a href="https://www.fda.gov/news-events/press-announcements/fda-warns-30-telehealth-companies-against-illegal-marketing-compounded-glp-1s" target="_blank" rel="noopener">Read at FDA →</a>
+</div>
+<div class="item">
+  <span class="tag tag-gl">GLOBAL</span>
+  <h3>ImmunityBio hit with first OPDP warning letter of 2026</h3>
+  <p>The FDA found Anktiva promotions in a TV ad and podcast misleading for burying risk information relative to benefit claims — fair balance remains the enforcement flashpoint.</p>
+  <a href="https://www.fiercepharma.com/marketing/immunitybio-faces-fda-warning-letter-over-anktiva-promotions-tv-ad-podcast-episode" target="_blank" rel="noopener">Read at FiercePharma →</a>
+</div>
+<div class="item">
+  <span class="tag tag-gl">GLOBAL</span>
+  <h3>GSK launches first DTC campaign for asthma hopeful Exdensur</h3>
+  <p>Six months post-launch, the "Carry On" TV spot positions the would-be blockbuster around fewer asthma attacks — a case study in timing DTC investment against a hostile ad-policy climate.</p>
+  <a href="https://www.fiercepharma.com/marketing/gsk-runs-first-dtc-ad-would-be-asthma-blockbuster-exdensur" target="_blank" rel="noopener">Read at FiercePharma →</a>
+</div>
+</section>
+
+<section>
+<h2>Trends to Watch</h2>
+<div class="trends">
+  <div>
+    <h3>1. Direct-to-patient replaces direct-to-consumer</h3>
+    <p>Amgen, BMS, AstraZeneca, Genentech, Novartis and Boehringer have all launched DTP services with self-pay discounts. The marketing question of 2026: where does classic DTC fit in a DTP world? (<a href="https://www.pharmavoice.com/news/dtc-advertisement-pharma-rfk-fda/760663/" target="_blank" rel="noopener">PharmaVoice</a>, <a href="https://www.fiercepharma.com/marketing/pharma-clicks-patients-direct-sales-model-shifts-marketing-strategies" target="_blank" rel="noopener">FiercePharma</a>)</p>
   </div>
-
-  <div class="item">
-    <span class="tag tag-nl">NL</span>
-    <h3>CBG column: how self-care medicines get their distribution status</h3>
-    <p>In its 1 July column "Bewust omgaan met medicijnen", the CBG explains how it determines the afleverstatus of self-care medicines in the Netherlands — directly relevant for anyone marketing OTC products in the Dutch market.</p>
-    <a class="src" href="https://www.cbg-meb.nl/actueel/nieuws/2026/07/01/column-over-medicijnen-bewust-omgaan-met-medicijnen" target="_blank" rel="noopener">Source: CBG-MEB</a>
+  <div>
+    <h3>2. Regulatory tightening on both sides of the Atlantic</h3>
+    <p>The FDA's enforcement surge and the EU pharma package entering into force in 2026 mean promotional review, claims substantiation and patient information will demand more marketing attention — and budget.</p>
   </div>
-
-  <div class="item">
-    <span class="tag tag-nl">NL</span>
-    <h3>CBG flags four challenges in its Stand van de Uitvoering</h3>
-    <p>New European rules for medicines, medical devices, biotech and chemicals, plus persistent shortages and delivery problems, top the CBG's list of execution challenges putting continuity of care under pressure.</p>
-    <a class="src" href="https://www.cbg-meb.nl/actueel/nieuws/2026/06/16/vier-uitdagingen-uit-de-stand-van-de-uitvoering" target="_blank" rel="noopener">Source: CBG-MEB</a>
+  <div>
+    <h3>3. TV budgets keep migrating to digital</h3>
+    <p>Pharma ad dollars continue shifting away from linear TV toward streaming and digital channels, accelerated by policy pressure on traditional DTC. (<a href="https://www.fiercepharma.com/marketing/2026-forecast-pharma-ad-dollars-will-continue-shifting-away-traditional-tv" target="_blank" rel="noopener">FiercePharma</a>)</p>
   </div>
+</div>
+</section>
 
-  <div class="item">
-    <span class="tag tag-nl">NL</span>
-    <h3>Medicine shortages decline, but 3.5 million Dutch patients still affected</h3>
-    <p>KNMP figures show shortages fell from 1,563 to 1,134 in 2025, yet pharmacy teams still spend roughly one FTE per pharmacy per day managing them — about €220 million annually across the sector.</p>
-    <a class="src" href="https://www.knmp.nl/actueel/nieuws/geneesmiddelentekort-daalt-maar-35-miljoen-nederlanders-ondervinden-nog-steeds-gevolgen" target="_blank" rel="noopener">Source: KNMP</a>
-  </div>
-
-  <h2 class="section">Europe</h2>
-
-  <div class="item">
-    <span class="tag tag-eu">EU</span>
-    <h3>EMA steps up efforts on medicines for women's health</h3>
-    <p>On 2 July, the EMA launched initiatives to better embed women's health in medicines development and regulation, with a dedicated workshop on 28–29 September — a signal for brands positioning in this space.</p>
-    <a class="src" href="https://www.ema.europa.eu/en/news/ema-steps-efforts-medicines-womens-health" target="_blank" rel="noopener">Source: EMA</a>
-  </div>
-
-  <div class="item">
-    <span class="tag tag-eu">EU</span>
-    <h3>New EMA variations guidelines streamline lifecycle management</h3>
-    <p>Updated variations guidelines aim to simplify post-approval changes — reducing regulatory friction for marketing authorisation holders managing product portfolios across Europe.</p>
-    <a class="src" href="https://www.ema.europa.eu/en/news/new-variations-guidelines-streamline-lifecycle-management-medicines" target="_blank" rel="noopener">Source: EMA</a>
-  </div>
-
-  <div class="item">
-    <span class="tag tag-eu">EU</span>
-    <h3>EFPIA: pharmaceutical package agreement "not strong enough" on competitiveness</h3>
-    <p>Responding to the EU pharmaceutical package, EFPIA warns Europe has lost a quarter of its global share of pharma investment in two decades and that the deal will not move the needle on European competitiveness.</p>
-    <a class="src" href="https://www.efpia.eu/news-events/the-efpia-view/statements-press-releases/efpia-response-to-pharmaceutical-package-agreement-more-to-do-to-keep-european-pharma-competitive/" target="_blank" rel="noopener">Source: EFPIA</a>
-  </div>
-
-  <div class="item">
-    <span class="tag tag-eu">EU</span>
-    <h3>EFPIA concerned over 15% US tariff in US–EU framework agreement</h3>
-    <p>EFPIA cautions that a potential 15% US tariff on pharmaceuticals, without clear exemptions for innovative medicines, could create shortages, impact patient access and raise barriers to global R&amp;D.</p>
-    <a class="src" href="https://www.efpia.eu/news-events/the-efpia-view/statements-press-releases/efpia-responds-to-the-publication-of-the-us-eu-joint-framework-agreement/" target="_blank" rel="noopener">Source: EFPIA</a>
-  </div>
-
-  <h2 class="section">Global</h2>
-
-  <div class="item">
-    <span class="tag tag-global">GLOBAL</span>
-    <h3>FDA advertising crackdown escalates — and seeks new legal powers</h3>
-    <p>The FDA has sent thousands of letters targeting misleading drug ads, issued around 100 cease-and-desist letters, is moving to close the "adequate provision" loophole, and has asked Congress for stronger DTC enforcement authority in its 2027 budget proposal.</p>
-    <a class="src" href="https://www.fda.gov/news-events/press-announcements/fda-launches-crackdown-deceptive-drug-advertising" target="_blank" rel="noopener">Source: FDA</a> &nbsp;
-    <a class="src" href="https://www.fiercepharma.com/marketing/fda-seeks-legislative-teeth-bite-back-against-misleading-dtc-drug-ads" target="_blank" rel="noopener">Source: FiercePharma</a>
-  </div>
-
-  <div class="item">
-    <span class="tag tag-global">GLOBAL</span>
-    <h3>GSK runs first DTC ad for asthma hopeful Exdensur</h3>
-    <p>Six months after launch, GSK has started direct-to-consumer advertising for its would-be asthma blockbuster — a notable bet on consumer advertising amid the US regulatory storm.</p>
-    <a class="src" href="https://www.fiercepharma.com/marketing/gsk-runs-first-dtc-ad-would-be-asthma-blockbuster-exdensur" target="_blank" rel="noopener">Source: FiercePharma</a>
-  </div>
-
-  <div class="item">
-    <span class="tag tag-global">GLOBAL</span>
-    <h3>Direct-to-patient programs expand rapidly</h3>
-    <p>Amgen, Bristol Myers Squibb, AstraZeneca, Genentech, Novartis and Boehringer Ingelheim have joined Lilly, Pfizer and Novo Nordisk with direct-to-patient platforms offering self-pay discounts — reshaping the DTC playbook from advertising to commerce.</p>
-    <a class="src" href="https://www.fiercepharma.com/marketing/pharma-clicks-patients-direct-sales-model-shifts-marketing-strategies" target="_blank" rel="noopener">Source: FiercePharma</a>
-  </div>
-
-  <div class="item">
-    <span class="tag tag-global">GLOBAL</span>
-    <h3>AI moves from analysis to action in pharma marketing</h3>
-    <p>Agentic AI is beginning to execute campaign adjustments rather than just inform them, and Eversana has built one of pharma's first AI social media influencers — putting AI-content disclosure high on the compliance agenda.</p>
-    <a class="src" href="https://www.pharmavoice.com/spons/2026-the-year-ais-role-in-pharma-shifts-from-analysis-to-action/806868/" target="_blank" rel="noopener">Source: PharmaVoice</a> &nbsp;
-    <a class="src" href="https://www.pharmavoice.com/news/ai-pharma-social-media-influencer-drug-eversana/805499/" target="_blank" rel="noopener">Source: PharmaVoice</a>
-  </div>
-
-  <h2 class="section">Trends to Watch</h2>
-  <div class="trends">
-    <h3>1. The end of DTC as we know it</h3>
-    <p>With FDA enforcement surging and pharma ad dollars shifting away from linear TV, budgets are flowing into digital, streaming and direct-to-patient commerce platforms. Brands should plan for a compliance-first, digital-first channel mix.</p>
-    <h3>2. Agentic AI — with a disclosure catch</h3>
-    <p>AI is moving from insight to execution in pharma marketing, but regulators and audiences increasingly expect clear labelling of AI-generated and sponsored content.</p>
-    <h3>3. EU pharma reform enters implementation mode</h3>
-    <p>The new EU pharmaceutical legislation takes effect in 2026 with a transition period through 2028. Dutch and European marketers should track variation, transparency and availability rules now rather than later.</p>
-  </div>
-
-  <footer>
-    <strong>Sources:</strong> Pharma.nl &middot; CBG-MEB &middot; KNMP &middot; Health~Holland &middot; EMA &middot; EFPIA &middot; Pharmaceutical Technology &middot; European Pharmaceutical Review &middot; FiercePharma &middot; PM360 &middot; PharmaVoice &middot; FDA.gov &middot; Reuters Health<br><br>
-    Automated daily briefing &middot; Pharma Marketing Newsfeed &middot; Updated July 7, 2026
-  </footer>
+<footer>
+  <p>Sources: Pharma.nl · CBG-MEB · KNMP · Health-Holland · EMA · EFPIA · Pharmaceutical Technology · European Pharmaceutical Review · FiercePharma · PM360 · PharmaVoice · FDA · Reuters Health</p>
+  <p>Automated daily newsfeed. Updated 20 July 2026, 09:00 CET.</p>
+</footer>
 </div>
 </body>
 </html>
