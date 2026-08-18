@@ -3,292 +3,146 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pharma Marketing Newsfeed — August 10, 2026</title>
+<title>Pharma Marketing Newsfeed — 18 August 2026</title>
 <style>
-  :root{
-    --navy:#0b3d5c;
-    --navy-dark:#082c42;
-    --accent-nl:#0b3d5c;
-    --accent-nl-bg:#eaf2f8;
-    --accent-eu:#1e6b3c;
-    --accent-eu-bg:#eef7ee;
-    --accent-global:#a8431e;
-    --accent-global-bg:#fbeee9;
-    --text:#2b2b2b;
-    --muted:#6b6b6b;
-    --border:#e3e7eb;
-    --bg:#f4f6f8;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    padding:0;
-    background:var(--bg);
-    font-family:'Segoe UI',Arial,Helvetica,sans-serif;
-    color:var(--text);
-  }
-  .wrap{
-    max-width:820px;
-    margin:0 auto;
-    padding:0 16px 48px 16px;
-  }
-  header{
-    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-dark) 100%);
-    color:#fff;
-    padding:36px 24px;
-    text-align:center;
-    margin-bottom:28px;
-  }
-  header h1{
-    margin:0 0 6px 0;
-    font-size:28px;
-    letter-spacing:0.3px;
-  }
-  header .date{
-    font-size:15px;
-    color:#bcd4e6;
-    font-weight:500;
-  }
-  header .tagline{
-    margin-top:10px;
-    font-size:13px;
-    color:#8fb3cc;
-    text-transform:uppercase;
-    letter-spacing:1.2px;
-  }
-  .intro{
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:8px;
-    padding:20px 24px;
-    margin-bottom:28px;
-    font-size:15px;
-    line-height:1.6;
-  }
-  section.geo{
-    margin-bottom:34px;
-  }
-  section.geo h2{
-    font-size:19px;
-    color:var(--navy);
-    border-bottom:2px solid var(--navy);
-    padding-bottom:8px;
-    margin-bottom:16px;
-  }
-  .card{
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:8px;
-    padding:18px 22px;
-    margin-bottom:14px;
-    transition:box-shadow .15s ease;
-  }
-  .card:hover{
-    box-shadow:0 2px 10px rgba(0,0,0,0.06);
-  }
-  .tag{
-    display:inline-block;
-    font-size:11px;
-    font-weight:700;
-    padding:3px 9px;
-    border-radius:4px;
-    letter-spacing:0.4px;
-    margin-bottom:8px;
-  }
-  .tag.nl{background:var(--accent-nl-bg);color:var(--accent-nl);}
-  .tag.eu{background:var(--accent-eu-bg);color:var(--accent-eu);}
-  .tag.global{background:var(--accent-global-bg);color:var(--accent-global);}
-  .card h3{
-    margin:0 0 8px 0;
-    font-size:16.5px;
-    color:#1a1a1a;
-    line-height:1.35;
-  }
-  .card p{
-    margin:0 0 10px 0;
-    font-size:14.5px;
-    line-height:1.55;
-    color:#4a4a4a;
-  }
-  .card a{
-    font-size:13.5px;
-    color:var(--navy);
-    text-decoration:none;
-    font-weight:600;
-  }
-  .card a:hover{
-    text-decoration:underline;
-  }
-  .trends{
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:8px;
-    padding:22px 24px;
-    margin-bottom:28px;
-  }
-  .trends h2{
-    font-size:19px;
-    color:var(--navy);
-    border-bottom:2px solid var(--navy);
-    padding-bottom:8px;
-    margin:0 0 16px 0;
-  }
-  .trends ol{
-    margin:0;
-    padding-left:20px;
-  }
-  .trends li{
-    margin-bottom:12px;
-    font-size:14.5px;
-    line-height:1.6;
-    color:var(--text);
-  }
-  footer{
-    text-align:center;
-    padding:24px 16px;
-    color:var(--muted);
-    font-size:12.5px;
-    line-height:1.7;
-    border-top:1px solid var(--border);
-    margin-top:12px;
-  }
-  footer .sources{
-    max-width:640px;
-    margin:0 auto 8px auto;
-  }
-  @media (max-width:600px){
-    header h1{font-size:22px;}
-    .wrap{padding:0 10px 32px 10px;}
-    section.geo h2, .trends h2{font-size:17px;}
-    .card{padding:14px 16px;}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Helvetica, Arial, sans-serif; background: #f4f6f8; color: #2d3748; line-height: 1.6; }
+  .container { max-width: 860px; margin: 0 auto; padding: 24px 16px; }
+  header { background: #1a3c5e; color: #fff; padding: 32px 24px; border-radius: 10px 10px 0 0; }
+  header h1 { font-size: 1.7rem; font-weight: 600; }
+  header .date { color: #a8c4dd; margin-top: 6px; font-size: 1rem; }
+  .intro { background: #fff; padding: 24px; border-bottom: 1px solid #e2e8f0; font-size: 1.02rem; }
+  section { background: #fff; padding: 24px; border-bottom: 1px solid #e2e8f0; }
+  section:last-of-type { border-radius: 0 0 10px 10px; }
+  h2 { font-size: 1.25rem; color: #1a3c5e; border-bottom: 3px solid #e8734a; display: inline-block; padding-bottom: 4px; margin-bottom: 18px; }
+  article { margin-bottom: 20px; padding-left: 14px; border-left: 3px solid #dbe4ec; }
+  article:last-child { margin-bottom: 0; }
+  .tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.5px; padding: 2px 9px; border-radius: 12px; margin-bottom: 4px; }
+  .tag-nl { background: #ff7a00; color: #fff; }
+  .tag-eu { background: #23538f; color: #fff; }
+  .tag-global { background: #4a8262; color: #fff; }
+  article h3 { font-size: 1.05rem; color: #1f2d3d; margin-bottom: 4px; }
+  article p { font-size: 0.95rem; color: #4a5568; }
+  article a { color: #1a6ea0; text-decoration: none; font-size: 0.88rem; }
+  article a:hover { text-decoration: underline; }
+  .trends { background: #fdf7f2; }
+  .trends .trend { margin-bottom: 14px; }
+  .trends .trend strong { color: #1a3c5e; }
+  footer { text-align: center; padding: 22px 16px; font-size: 0.8rem; color: #718096; }
+  footer a { color: #1a6ea0; }
+  @media (max-width: 600px) {
+    header h1 { font-size: 1.3rem; }
+    .container { padding: 12px 8px; }
+    section, .intro { padding: 18px 14px; }
   }
 </style>
 </head>
 <body>
-
-<header>
-  <h1>Pharma Marketing Newsfeed</h1>
-  <div class="date">August 10, 2026</div>
-  <div class="tagline">Netherlands &middot; Europe &middot; Global</div>
-</header>
-
-<div class="wrap">
+<div class="container">
+  <header>
+    <h1>Pharma Marketing Newsfeed</h1>
+    <div class="date">Tuesday, 18 August 2026 — Daily briefing for pharmaceutical marketing professionals</div>
+  </header>
 
   <div class="intro">
-    Today's lead story is regulatory: the <strong>EMA has welcomed political agreement on the new EU pharmaceutical legislation</strong>, the most significant overhaul of Europe's regulatory framework in two decades. Closer to home, <strong>KNMP</strong> has rolled out a new public campaign addressing medicine shortages. Below, curated stories from whitelisted Dutch, European, and global sources — updated daily.
+    Dutch and EU regulators kept public advertising and digital labelling rules in the spotlight this week, while the biggest marketing moves came from the U.S.: Novo Nordisk switched its media agency of record and Snapchat rolled out a disclosure-ready ad format built specifically for pharma. Below, the day's stories from our monitored Dutch, European and global sources.
   </div>
 
-  <section class="geo">
-    <h2>🇳🇱 Netherlands</h2>
-
-    <div class="card">
-      <span class="tag nl">NL</span>
-      <h3>KNMP launches "Op is geen optie" campaign on medicine shortages</h3>
-      <p>The Royal Dutch Pharmacists Association unveiled a new public-awareness campaign addressing ongoing drug shortages, aimed at managing patient expectations and reinforcing the pharmacist's role as first point of contact.</p>
-      <a href="https://www.knmp.nl/actueel/nieuws/op-geen-optie-titel-nieuwe-publiekscampagne-knmp-over-geneesmiddelentekorten" target="_blank" rel="noopener">Read on knmp.nl →</a>
-    </div>
-
-    <div class="card">
-      <span class="tag nl">NL</span>
-      <h3>KNMP: "A friendly request from your pharmacist" campaign</h3>
-      <p>A companion public-facing campaign from KNMP frames practical guidance to patients as a friendly, trust-building message — a useful reference point for tone in patient-facing healthcare comms.</p>
-      <a href="https://www.knmp.nl/actueel/nieuws/nieuwe-publiekscampagne-vriendelijk-verzoek-van-uw-apotheker" target="_blank" rel="noopener">Read on knmp.nl →</a>
-    </div>
-
-    <div class="card">
-      <span class="tag nl">NL</span>
-      <h3>CBG and IGJ warn against illegal online medicine offers</h3>
-      <p>The Medicines Evaluation Board and the Health and Youth Care Inspectorate reiterated their joint warning about illegal online drug sales — a reminder for marketers to keep e-commerce and affiliate claims within CBG advertising rules.</p>
-      <a href="https://www.cbg-meb.nl/actueel/nieuws/2025/09/03/igj-en-cbg-waarschuwen-voor-illegaal-online-aanbod-van-medicijnen" target="_blank" rel="noopener">Read on cbg-meb.nl →</a>
-    </div>
+  <section>
+    <h2>Netherlands</h2>
+    <article>
+      <span class="tag tag-nl">NL</span>
+      <h3>CBG-MEB opens registration for Collegedag 2026</h3>
+      <p>The Medicines Evaluation Board opened sign-ups for its annual Collegedag, a key touchpoint where Dutch marketing authorisation holders track regulatory priorities that shape promotional and labelling compliance.</p>
+      <a href="https://www.cbg-meb.nl/actueel/nieuws/2026/08/05/schrijf-je-in-voor-de-cbg-collegedag-2026" target="_blank" rel="noopener">CBG-MEB →</a>
+    </article>
+    <article>
+      <span class="tag tag-nl">NL</span>
+      <h3>CBG-MEB restates public advertising rules for medicines</h3>
+      <p>CBG-MEB's Publieksreclame guidance reaffirms that prescription medicines cannot be advertised to the public in the Netherlands, and that OTC advertising must comply with the Code for Public Advertising of Medicines (CPG) — a standing reference point for Dutch campaign sign-off.</p>
+      <a href="https://www.cbg-meb.nl/onderwerpen/bd-publieksreclame" target="_blank" rel="noopener">CBG-MEB →</a>
+    </article>
+    <article>
+      <span class="tag tag-nl">NL</span>
+      <h3>KNMP opens registration for Najaarscongres 2026</h3>
+      <p>KNMP's Autumn Congress, themed "Pharmacist of the Future," takes place 27 October in Utrecht — a relevant audience touchpoint for HCP-facing marketing and education campaigns aimed at Dutch pharmacists.</p>
+      <a href="https://www.knmp.nl/actueel/nieuws/inschrijving-knmp-najaarscongres-2026-geopend" target="_blank" rel="noopener">KNMP →</a>
+    </article>
   </section>
 
-  <section class="geo">
-    <h2>🇪🇺 Europe</h2>
-
-    <div class="card">
-      <span class="tag eu">EU</span>
-      <h3>EMA welcomes political agreement on new EU pharmaceutical legislation</h3>
-      <p>The biggest regulatory overhaul in over two decades is moving forward, with stronger supply-continuity obligations and shortage-notification requirements — expect knock-on effects for marketing timelines and market-access communications.</p>
-      <a href="https://www.ema.europa.eu/en/news/ema-welcomes-political-agreement-new-eu-pharmaceutical-legislation" target="_blank" rel="noopener">Read on ema.europa.eu →</a>
-    </div>
-
-    <div class="card">
-      <span class="tag eu">EU</span>
-      <h3>EMA simplifies scientific committee structure for 2026</h3>
-      <p>EMA is consolidating five scientific committees into two (CHMP and PRAC), part of preparation for the new legislation. Fewer touchpoints likely means faster but more concentrated regulatory review cycles.</p>
-      <a href="https://www.ema.europa.eu/en/news/ema-management-board-highlights-june-2026-meeting" target="_blank" rel="noopener">Read on ema.europa.eu →</a>
-    </div>
-
-    <div class="card">
-      <span class="tag eu">EU</span>
-      <h3>EFPIA Code of Practice still the backbone of EU promotional compliance</h3>
-      <p>EFPIA's Code covers all promotional channels — from HCP-facing materials to digital and social media — and requires strict alignment with approved product indications. A good refresher before any pan-European campaign goes live.</p>
-      <a href="https://www.efpia.eu/relationships-code/the-efpia-code/" target="_blank" rel="noopener">Read on efpia.eu →</a>
-    </div>
-
-    <div class="card">
-      <span class="tag eu">EU</span>
-      <h3>Pharma still lags on digital-channel engagement with physicians</h3>
-      <p>European Pharmaceutical Review reports a persistent gap: 44% of HCPs use WhatsApp regularly with colleagues, but only 14% use it to interact with pharma — and 48% of physicians still hear from companies through a single channel only.</p>
-      <a href="https://www.europeanpharmaceuticalreview.com/article/115336/digitalising-marketing-to-physicians-what-pharma-needs-to-know/" target="_blank" rel="noopener">Read on europeanpharmaceuticalreview.com →</a>
-    </div>
+  <section>
+    <h2>Europe</h2>
+    <article>
+      <span class="tag tag-eu">EU</span>
+      <h3>EFPIA: digital medicines information gains momentum</h3>
+      <p>A joint AESGP/EFPIA/Medicines for Europe report shows electronic Product Information (ePI) pilots now running across 31 countries, pointing to digital labelling becoming standard infrastructure that medical-legal-regulatory teams will need to plan content around.</p>
+      <a href="https://www.efpia.eu/news-events/the-efpia-view/statements-press-releases/digital-medicines-information-gains-momentum/" target="_blank" rel="noopener">EFPIA →</a>
+    </article>
+    <article>
+      <span class="tag tag-eu">EU</span>
+      <h3>EFPIA's 2026 WAIT Indicator shows widening access inequality</h3>
+      <p>EFPIA's annual analysis of 168 new medicines across 36 countries finds patients in Europe waiting longer for new treatments, with inequality between member states growing — context that shapes how launch and access messaging lands market by market.</p>
+      <a href="https://www.efpia.eu/news-events/the-efpia-view/statements-press-releases/patients-in-europe-waiting-longer-for-new-medicines-as-inequality-grows-between-member-states/" target="_blank" rel="noopener">EFPIA →</a>
+    </article>
+    <article>
+      <span class="tag tag-eu">EU</span>
+      <h3>EMA advances reform of EU pharmaceutical legislation</h3>
+      <p>The EMA's ongoing work on the EU pharmaceutical legislation reform continues to move forward, with implications for approval timelines and, downstream, for how and when marketing teams can plan launch communications.</p>
+      <a href="https://www.ema.europa.eu/en/about-us/what-we-do/reform-eu-pharmaceutical-legislation" target="_blank" rel="noopener">EMA →</a>
+    </article>
   </section>
 
-  <section class="geo">
-    <h2>🌍 Global</h2>
-
-    <div class="card">
-      <span class="tag global">GLOBAL</span>
-      <h3>2026 forecast: pharma ad dollars keep shifting from TV to digital</h3>
-      <p>FiercePharma reports 2025 was the first year social media outpaced linear TV in healthcare/pharma ad spend, with digital projected to reach 82% of all pharma ad spending by 2027 — accelerated by a federal push to limit DTC drug ads.</p>
-      <a href="https://www.fiercepharma.com/marketing/2026-forecast-pharma-ad-dollars-will-continue-shifting-away-traditional-tv" target="_blank" rel="noopener">Read on fiercepharma.com →</a>
-    </div>
-
-    <div class="card">
-      <span class="tag global">GLOBAL</span>
-      <h3>Direct-to-patient telehealth programs expand among major pharma brands</h3>
-      <p>Amgen, BMS, AstraZeneca, Genentech, Novartis, and Boehringer Ingelheim have launched self-pay discount programs that route patients from an ad straight into a same-day telehealth consult — giving brands richer patient-level data.</p>
-      <a href="https://www.fiercepharma.com/marketing/pharma-clicks-patients-direct-sales-model-shifts-marketing-strategies" target="_blank" rel="noopener">Read on fiercepharma.com →</a>
-    </div>
-
-    <div class="card">
-      <span class="tag global">GLOBAL</span>
-      <h3>FDA directed to tighten direct-to-consumer drug advertising rules</h3>
-      <p>The FDA has been directed to rein in DTC marketing, with a possible rollback of the 1997 "adequate provision" policy that lets TV ads summarize risk information rather than list it in full — worth watching for any brand running U.S. campaigns.</p>
-      <a href="https://www.fiercepharma.com/marketing/pharma-clicks-patients-direct-sales-model-shifts-marketing-strategies" target="_blank" rel="noopener">Read on fiercepharma.com →</a>
-    </div>
-
-    <div class="card">
-      <span class="tag global">GLOBAL</span>
-      <h3>2026 PM360 Pharma Choice Awards winners announced</h3>
-      <p>LivaNova and Elevate Healthcare took Gold in Professional Campaign for "Implant the Future of Seizure Control"; AVITA Medical and Xavier Creative House won Silver for "Advancing Recovery Through Story &amp; Science." Worth a look for creative benchmarking.</p>
-      <a href="https://pm360online.com/the-2026-pm360-pharma-choice-awards-professional-campaign-gold-winner/" target="_blank" rel="noopener">Read on pm360online.com →</a>
-    </div>
-
-    <div class="card">
-      <span class="tag global">GLOBAL</span>
-      <h3>AI-powered omnichannel and patient-centered personalization top 2026 trend lists</h3>
-      <p>PharmaVoice's 2026 outlook flags predictive analytics and personalization as the top lever for building HCP and patient trust, alongside continued momentum in obesity/GLP-1 marketing and precision-medicine positioning.</p>
-      <a href="https://www.pharmavoice.com/news/pharma-trends-outlook-2026/810896/" target="_blank" rel="noopener">Read on pharmavoice.com →</a>
-    </div>
+  <section>
+    <h2>Global</h2>
+    <article>
+      <span class="tag tag-global">Global</span>
+      <h3>Novo Nordisk switches U.S. media buying to Omnicom</h3>
+      <p>Novo Nordisk has named Omnicom its agency of record for U.S. media buying, ending a six-year run with WPP's Wavemaker, as the drugmaker scales consumer-focused strategies for its GLP-1 franchise. The account is reported to be worth roughly $520M.</p>
+      <a href="https://www.fiercepharma.com/marketing/novo-nordisk-makes-omnicom-agency-record-us-media-buying" target="_blank" rel="noopener">Fierce Pharma →</a>
+    </article>
+    <article>
+      <span class="tag tag-global">Global</span>
+      <h3>Snapchat launches ad format built for pharma disclosure needs</h3>
+      <p>Snapchat now supports up to three disclaimer CTAs alongside a primary call to action, letting pharma marketers link to safety, patient and prescribing information within a single ad across Snap Ads, Story Ads and Commercials.</p>
+      <a href="https://www.fiercepharma.com/marketing/snapchat-creates-ad-format-support-pharma-disclosure-needs" target="_blank" rel="noopener">Fierce Pharma →</a>
+    </article>
+    <article>
+      <span class="tag tag-global">Global</span>
+      <h3>Leo Pharma marks 2nd annual GPP Awareness Day</h3>
+      <p>Leo Pharma and the National Psoriasis Foundation are running a rare-disease education push for generalized pustular psoriasis, aiming to speed diagnosis of a condition often mistaken for common plaque psoriasis.</p>
+      <a href="https://www.fiercepharma.com/marketing/leo-pharma-readies-rare-disease-education-push-2nd-annual-gpp-awareness-day" target="_blank" rel="noopener">Fierce Pharma →</a>
+    </article>
+    <article>
+      <span class="tag tag-global">Global</span>
+      <h3>Abbott offers $1M prize in college blood-supply campaign</h3>
+      <p>Abbott is again pitting Big Ten universities against each other for a $1 million prize tied to blood donation, tapping campus rivalry to build brand visibility around a public-health need.</p>
+      <a href="https://www.fiercepharma.com/marketing/abbott-pump-blood-supply-1m-college-sports-prize-amid-us-crisis" target="_blank" rel="noopener">Fierce Pharma →</a>
+    </article>
+    <article>
+      <span class="tag tag-global">Global</span>
+      <h3>PM360: patient experience becomes a top 2026 marketing priority</h3>
+      <p>PM360's "State of Pharmaceutical Marketing in 2026" report finds patient experience is becoming as strategically important as clinical development, with the industry shifting from campaign-based communication to integrated, data-informed engagement across the treatment journey.</p>
+      <a href="https://pm360online.com/state-of-pharmaceutical-marketing-in-2026/" target="_blank" rel="noopener">PM360 →</a>
+    </article>
+    <article>
+      <span class="tag tag-global">Global</span>
+      <h3>FDA's OPDP flags misleading DTC ad and podcast content</h3>
+      <p>The FDA's Office of Prescription Drug Promotion issued a warning letter to ImmunityBio in March over a direct-to-consumer broadcast ad and podcast for ANKTIVA — a reminder that DTC and audio/podcast placements remain squarely within OPDP's review scope.</p>
+      <a href="https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/immunitybio-inc-725468-03132026" target="_blank" rel="noopener">FDA →</a>
+    </article>
   </section>
 
-  <div class="trends">
-    <h2>📈 Trends to Watch</h2>
-    <ol>
-      <li><strong>TV-to-digital migration is accelerating, not slowing.</strong> Regulatory pressure on U.S. DTC ads plus the direct-to-patient/telehealth model both push budgets further toward owned digital and social channels.</li>
-      <li><strong>Trust beats reach in influencer strategy.</strong> Patient advocates are outperforming lifestyle and celebrity influencers on trust and receptivity — a cheaper, more defensible route for smaller budgets.</li>
-      <li><strong>EU regulatory reform will reshape timelines.</strong> The new EU pharmaceutical legislation and EMA's committee consolidation mean marketing and market-access teams should plan for tighter shortage-notification and supply-communication obligations.</li>
-    </ol>
-  </div>
+  <section class="trends">
+    <h2>Trends to Watch</h2>
+    <div class="trend"><strong>Compliance-by-design ad formats.</strong> Platforms like Snapchat are now building disclosure and safety-information tooling directly into ad units, lowering the friction of running compliant DTC campaigns on social channels.</div>
+    <div class="trend"><strong>Patient experience as strategy.</strong> PM360's 2026 outlook and Leo Pharma's rare-disease awareness push both signal that patient experience and education campaigns are becoming as central to brand plans as clinical data.</div>
+    <div class="trend"><strong>Digital regulatory infrastructure.</strong> EFPIA's ePI rollout across 31 countries shows electronic product information becoming standard infrastructure, reshaping how marketing and medical-legal-regulatory teams collaborate on content.</div>
+  </section>
 
+  <footer>
+    Automated daily briefing compiled from whitelisted sources only: Pharma.nl, CBG-MEB, KNMP, Health-Holland, EMA, EFPIA, Pharmaceutical Technology, European Pharmaceutical Review, FiercePharma, PM360, PharmaVoice, FDA.gov, Reuters Health.<br>
+    Generated automatically — <a href="https://njoymarketingonline.github.io/pharma-newsfeed" target="_blank" rel="noopener">njoymarketingonline.github.io/pharma-newsfeed</a>
+  </footer>
 </div>
-
-<footer>
-  <div class="sources"><strong>Sources:</strong> KNMP (knmp.nl) &middot; CBG-MEB (cbg-meb.nl) &middot; Health~Holland (health-holland.com) &middot; EMA (ema.europa.eu) &middot; EFPIA (efpia.eu) &middot; European Pharmaceutical Review (europeanpharmaceuticalreview.com) &middot; Pharmaceutical Technology (pharmaceutical-technology.com) &middot; FiercePharma (fiercepharma.com) &middot; PM360 (pm360online.com) &middot; PharmaVoice (pharmavoice.com) &middot; FDA (fda.gov)</div>
-  <div>Updated daily at 9:00 AM &middot; Automated newsfeed &middot; Pharma Marketing Daily</div>
-</footer>
-
 </body>
 </html>
