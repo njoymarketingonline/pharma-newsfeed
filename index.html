@@ -3,146 +3,251 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pharma Marketing Newsfeed — 18 August 2026</title>
+<title>Pharma Marketing Newsfeed — August 27, 2026</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Helvetica, Arial, sans-serif; background: #f4f6f8; color: #2d3748; line-height: 1.6; }
-  .container { max-width: 860px; margin: 0 auto; padding: 24px 16px; }
-  header { background: #1a3c5e; color: #fff; padding: 32px 24px; border-radius: 10px 10px 0 0; }
-  header h1 { font-size: 1.7rem; font-weight: 600; }
-  header .date { color: #a8c4dd; margin-top: 6px; font-size: 1rem; }
-  .intro { background: #fff; padding: 24px; border-bottom: 1px solid #e2e8f0; font-size: 1.02rem; }
-  section { background: #fff; padding: 24px; border-bottom: 1px solid #e2e8f0; }
-  section:last-of-type { border-radius: 0 0 10px 10px; }
-  h2 { font-size: 1.25rem; color: #1a3c5e; border-bottom: 3px solid #e8734a; display: inline-block; padding-bottom: 4px; margin-bottom: 18px; }
-  article { margin-bottom: 20px; padding-left: 14px; border-left: 3px solid #dbe4ec; }
-  article:last-child { margin-bottom: 0; }
-  .tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.5px; padding: 2px 9px; border-radius: 12px; margin-bottom: 4px; }
-  .tag-nl { background: #ff7a00; color: #fff; }
-  .tag-eu { background: #23538f; color: #fff; }
-  .tag-global { background: #4a8262; color: #fff; }
-  article h3 { font-size: 1.05rem; color: #1f2d3d; margin-bottom: 4px; }
-  article p { font-size: 0.95rem; color: #4a5568; }
-  article a { color: #1a6ea0; text-decoration: none; font-size: 0.88rem; }
-  article a:hover { text-decoration: underline; }
-  .trends { background: #fdf7f2; }
-  .trends .trend { margin-bottom: 14px; }
-  .trends .trend strong { color: #1a3c5e; }
-  footer { text-align: center; padding: 22px 16px; font-size: 0.8rem; color: #718096; }
-  footer a { color: #1a6ea0; }
+  :root {
+    --navy: #0b3d59;
+    --navy-light: #3d6b8c;
+    --grey-badge: #7a7a7a;
+    --bg: #f2f4f6;
+    --text: #26323a;
+    --muted: #5c6b73;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--text);
+  }
+  .wrap {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 16px 60px 16px;
+  }
+  header {
+    background-color: var(--navy);
+    color: #fff;
+    padding: 36px 24px 28px 24px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0 0 6px 0;
+    font-size: 26px;
+    letter-spacing: 0.3px;
+    font-family: Georgia, "Times New Roman", serif;
+  }
+  header .date {
+    font-size: 14px;
+    color: #a9cbdd;
+    margin-bottom: 4px;
+  }
+  header .tagline {
+    font-size: 13px;
+    color: #d7e6ee;
+    margin-top: 8px;
+  }
+  section.geo {
+    margin-top: 32px;
+  }
+  section.geo h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--navy);
+    border-bottom: 2px solid var(--navy);
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    padding: 2px 9px;
+    border-radius: 3px;
+    letter-spacing: 0.3px;
+  }
+  .badge.nl { background-color: var(--navy); }
+  .badge.eu { background-color: var(--navy-light); }
+  .badge.global { background-color: var(--grey-badge); }
+  .card h3 {
+    font-size: 16px;
+    margin: 10px 0 6px 0;
+    color: #17232b;
+  }
+  .card p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--muted);
+    margin: 0 0 10px 0;
+  }
+  .card a {
+    font-size: 12.5px;
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .card a:hover { text-decoration: underline; }
+  .trends {
+    margin-top: 34px;
+    background-color: #eaf1f5;
+    border-radius: 8px;
+    padding: 22px 24px;
+  }
+  .trends h2 {
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--navy);
+    margin: 0 0 14px 0;
+  }
+  .trends ol {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .trends li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #2f3b42;
+    margin-bottom: 10px;
+  }
+  footer {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid #d7dde1;
+    font-size: 12px;
+    color: #8a969c;
+    line-height: 1.7;
+    text-align: center;
+  }
   @media (max-width: 600px) {
-    header h1 { font-size: 1.3rem; }
-    .container { padding: 12px 8px; }
-    section, .intro { padding: 18px 14px; }
+    header h1 { font-size: 21px; }
+    .card h3 { font-size: 15px; }
   }
 </style>
 </head>
 <body>
-<div class="container">
-  <header>
-    <h1>Pharma Marketing Newsfeed</h1>
-    <div class="date">Tuesday, 18 August 2026 — Daily briefing for pharmaceutical marketing professionals</div>
-  </header>
 
-  <div class="intro">
-    Dutch and EU regulators kept public advertising and digital labelling rules in the spotlight this week, while the biggest marketing moves came from the U.S.: Novo Nordisk switched its media agency of record and Snapchat rolled out a disclosure-ready ad format built specifically for pharma. Below, the day's stories from our monitored Dutch, European and global sources.
+<header>
+  <h1>Pharma Marketing Newsfeed</h1>
+  <div class="date">Thursday, August 27, 2026</div>
+  <div class="tagline">Netherlands · Europe · Global — curated daily from whitelisted industry sources</div>
+</header>
+
+<div class="wrap">
+
+  <section class="geo">
+    <h2>Netherlands</h2>
+
+    <div class="card">
+      <span class="badge nl">NL</span>
+      <h3>J&amp;J opens its Health~Holland platform to oncology startups</h3>
+      <p>Johnson &amp; Johnson is inviting oncology innovators to explore what it takes to stand out as capital and acquisition interest concentrate — a signal that positioning and a credible development story now count as much as scientific novelty.</p>
+      <a href="https://www.health-holland.com/news/2026/08/jj-built-matter-oncology-startup-strategies-stand-out-crowded-market" target="_blank" rel="noopener">Health~Holland, 21 Aug 2026 →</a>
+    </div>
+
+    <div class="card">
+      <span class="badge nl">NL</span>
+      <h3>KNMP launches new video series on medicine shortages</h3>
+      <p>The Royal Dutch Pharmacists Association released a set of short videos putting drug shortages "onder de aandacht" — a public-facing communications push aimed at patients and pharmacy teams.</p>
+      <a href="https://www.knmp.nl/actueel/nieuws/geneesmiddelentekorten-onder-de-aandacht-met-nieuwe-knmp-videos" target="_blank" rel="noopener">KNMP, 12 Aug 2026 →</a>
+    </div>
+
+    <div class="card">
+      <span class="badge nl">NL</span>
+      <h3>Registration opens for CBG Collegedag 2026</h3>
+      <p>The Dutch Medicines Evaluation Board opened sign-ups for its annual Collegedag on 28 September at TivoliVredenburg, Utrecht — a key stakeholder event where regulators, industry and healthcare professionals compare notes on medicines policy.</p>
+      <a href="https://www.cbg-meb.nl/actueel/nieuws/2026/08/05/schrijf-je-in-voor-de-cbg-collegedag-2026" target="_blank" rel="noopener">CBG-MEB, 5 Aug 2026 →</a>
+    </div>
+  </section>
+
+  <section class="geo">
+    <h2>Europe</h2>
+
+    <div class="card">
+      <span class="badge eu">EU</span>
+      <h3>EFPIA: Japan's 2026 reform offers a blueprint for Europe</h3>
+      <p>EFPIA's latest blog argues Japan is moving faster than the EU on pharmaceutical competitiveness reform — a framing likely to shape how European pharma communicates its innovation case to policymakers this autumn.</p>
+      <a href="https://www.efpia.eu/news-events/the-efpia-view/blog-articles/japans-2026-honebuto-offers-a-blueprint-for-europes-pharmaceutical-competitiveness/" target="_blank" rel="noopener">EFPIA, 3 Aug 2026 →</a>
+    </div>
+
+    <div class="card">
+      <span class="badge eu">EU</span>
+      <h3>EFPIA's €120bn economic-impact report now includes Japan</h3>
+      <p>EFPIA's expanded report argues that converting EU scientific excellence into commercial success could add more than €120 billion to the EU economy over 10 years — a figure industry communicators are likely to lean on in policy and investor messaging.</p>
+      <a href="https://www.efpia.eu/news-events/the-efpia-view/statements-press-releases/turning-eu-excellence-in-science-into-commercial-success-could-add-more-than-120billion-to-eu-economy-in-10-years/" target="_blank" rel="noopener">EFPIA, updated 2 Jul 2026 →</a>
+    </div>
+
+    <div class="card">
+      <span class="badge eu">EU</span>
+      <h3>EMA's CHMP recommends 12 new medicines for approval</h3>
+      <p>The Committee for Medicinal Products for Human Use recommended twelve new medicines and eight indication extensions at its July meeting — each one a fresh launch-marketing and market-access workstream entering the pipeline.</p>
+      <a href="https://www.ema.europa.eu/en/news/meeting-highlights-committee-medicinal-products-human-use-chmp-20-23-july-2026" target="_blank" rel="noopener">EMA, 24 Jul 2026 →</a>
+    </div>
+  </section>
+
+  <section class="geo">
+    <h2>Global</h2>
+
+    <div class="card">
+      <span class="badge global">GLOBAL</span>
+      <h3>NAD splits the decision in Kenvue–Hims &amp; Hers hair-ad dispute</h3>
+      <p>The National Advertising Division issued a mixed ruling in the ad dispute between Kenvue and Hims &amp; Hers over hair-loss claims — a reminder that comparative and efficacy claims remain a compliance flashpoint.</p>
+      <a href="https://www.fiercepharma.com/marketing/nad-reaches-split-decision-hair-ad-row-between-kenvue-and-hims-hers" target="_blank" rel="noopener">Fierce Pharma, 25 Aug 2026 →</a>
+    </div>
+
+    <div class="card">
+      <span class="badge global">GLOBAL</span>
+      <h3>Lundbeck expands AI-powered commercial partnership with Eversana</h3>
+      <p>Lundbeck broadened its pact with Eversana to extend AI scope across its US commercial organization — the latest sign that AI is moving from pilot projects into the core of pharma marketing operations.</p>
+      <a href="https://www.fiercepharma.com/marketing/lundbeck-strikes-expanded-pact-eversana-broaden-ai-scope-across-us-commercial-org" target="_blank" rel="noopener">Fierce Pharma, 25 Aug 2026 →</a>
+    </div>
+
+    <div class="card">
+      <span class="badge global">GLOBAL</span>
+      <h3>Lilly's "A Life Covered" anchors new GLP-1 access campaign</h3>
+      <p>Eli Lilly's new campaign is built around a short film following a woman's decades-long weight-loss journey, pairing emotional storytelling with a Medicaid-access message for its GLP-1 franchise.</p>
+      <a href="https://www.fiercepharma.com/pharma/lilly-covers-lifelong-obesity-journey-new-glp-1-medicaid-access-campaign" target="_blank" rel="noopener">Fierce Pharma, 24 Aug 2026 →</a>
+    </div>
+
+    <div class="card">
+      <span class="badge global">GLOBAL</span>
+      <h3>Daiichi Sankyo promotes Ken Keller to lead new commercialization unit</h3>
+      <p>The promotion puts Keller in charge of a key pillar of Daiichi's push to become a top-five oncology company by 2035 — another example of commercial leadership being elevated as a strategic priority.</p>
+      <a href="https://www.fiercepharma.com/marketing/daiichi-sankyo-promotes-ken-keller-lead-new-commercialization-unit" target="_blank" rel="noopener">Fierce Pharma, 24 Aug 2026 →</a>
+    </div>
+
+    <div class="card">
+      <span class="badge global">GLOBAL</span>
+      <h3>How cost and perception could reshape the GLP-1 market</h3>
+      <p>As Eli Lilly and Novo Nordisk race for share, new survey data suggests affordability and prescribing perceptions — not just efficacy — may decide which brand wins patients, underscoring pricing communication as a core marketing lever.</p>
+      <a href="https://www.pharmavoice.com/news/glp-1-market-cost-prescribing-preferences/828229/" target="_blank" rel="noopener">PharmaVoice, 19 Aug 2026 →</a>
+    </div>
+  </section>
+
+  <div class="trends">
+    <h2>Trends to Watch</h2>
+    <ol>
+      <li><strong>Positioning over novelty.</strong> J&amp;J's Health~Holland platform, EFPIA's competitiveness messaging, and Lilly's "A Life Covered" campaign all show pharma leaning harder into narrative as pipelines get crowded and pricing scrutiny rises.</li>
+      <li><strong>Advertising compliance stays a flashpoint.</strong> The Kenvue–Hims &amp; Hers NAD ruling is a reminder that comparative and efficacy claims draw scrutiny fast, even outside formal FDA/CBG review.</li>
+      <li><strong>AI moves into the commercial stack.</strong> Lundbeck's expanded Eversana partnership and Daiichi's new commercialization unit point to companies restructuring marketing operations around AI-enabled, dedicated commercial leadership.</li>
+    </ol>
   </div>
 
-  <section>
-    <h2>Netherlands</h2>
-    <article>
-      <span class="tag tag-nl">NL</span>
-      <h3>CBG-MEB opens registration for Collegedag 2026</h3>
-      <p>The Medicines Evaluation Board opened sign-ups for its annual Collegedag, a key touchpoint where Dutch marketing authorisation holders track regulatory priorities that shape promotional and labelling compliance.</p>
-      <a href="https://www.cbg-meb.nl/actueel/nieuws/2026/08/05/schrijf-je-in-voor-de-cbg-collegedag-2026" target="_blank" rel="noopener">CBG-MEB →</a>
-    </article>
-    <article>
-      <span class="tag tag-nl">NL</span>
-      <h3>CBG-MEB restates public advertising rules for medicines</h3>
-      <p>CBG-MEB's Publieksreclame guidance reaffirms that prescription medicines cannot be advertised to the public in the Netherlands, and that OTC advertising must comply with the Code for Public Advertising of Medicines (CPG) — a standing reference point for Dutch campaign sign-off.</p>
-      <a href="https://www.cbg-meb.nl/onderwerpen/bd-publieksreclame" target="_blank" rel="noopener">CBG-MEB →</a>
-    </article>
-    <article>
-      <span class="tag tag-nl">NL</span>
-      <h3>KNMP opens registration for Najaarscongres 2026</h3>
-      <p>KNMP's Autumn Congress, themed "Pharmacist of the Future," takes place 27 October in Utrecht — a relevant audience touchpoint for HCP-facing marketing and education campaigns aimed at Dutch pharmacists.</p>
-      <a href="https://www.knmp.nl/actueel/nieuws/inschrijving-knmp-najaarscongres-2026-geopend" target="_blank" rel="noopener">KNMP →</a>
-    </article>
-  </section>
-
-  <section>
-    <h2>Europe</h2>
-    <article>
-      <span class="tag tag-eu">EU</span>
-      <h3>EFPIA: digital medicines information gains momentum</h3>
-      <p>A joint AESGP/EFPIA/Medicines for Europe report shows electronic Product Information (ePI) pilots now running across 31 countries, pointing to digital labelling becoming standard infrastructure that medical-legal-regulatory teams will need to plan content around.</p>
-      <a href="https://www.efpia.eu/news-events/the-efpia-view/statements-press-releases/digital-medicines-information-gains-momentum/" target="_blank" rel="noopener">EFPIA →</a>
-    </article>
-    <article>
-      <span class="tag tag-eu">EU</span>
-      <h3>EFPIA's 2026 WAIT Indicator shows widening access inequality</h3>
-      <p>EFPIA's annual analysis of 168 new medicines across 36 countries finds patients in Europe waiting longer for new treatments, with inequality between member states growing — context that shapes how launch and access messaging lands market by market.</p>
-      <a href="https://www.efpia.eu/news-events/the-efpia-view/statements-press-releases/patients-in-europe-waiting-longer-for-new-medicines-as-inequality-grows-between-member-states/" target="_blank" rel="noopener">EFPIA →</a>
-    </article>
-    <article>
-      <span class="tag tag-eu">EU</span>
-      <h3>EMA advances reform of EU pharmaceutical legislation</h3>
-      <p>The EMA's ongoing work on the EU pharmaceutical legislation reform continues to move forward, with implications for approval timelines and, downstream, for how and when marketing teams can plan launch communications.</p>
-      <a href="https://www.ema.europa.eu/en/about-us/what-we-do/reform-eu-pharmaceutical-legislation" target="_blank" rel="noopener">EMA →</a>
-    </article>
-  </section>
-
-  <section>
-    <h2>Global</h2>
-    <article>
-      <span class="tag tag-global">Global</span>
-      <h3>Novo Nordisk switches U.S. media buying to Omnicom</h3>
-      <p>Novo Nordisk has named Omnicom its agency of record for U.S. media buying, ending a six-year run with WPP's Wavemaker, as the drugmaker scales consumer-focused strategies for its GLP-1 franchise. The account is reported to be worth roughly $520M.</p>
-      <a href="https://www.fiercepharma.com/marketing/novo-nordisk-makes-omnicom-agency-record-us-media-buying" target="_blank" rel="noopener">Fierce Pharma →</a>
-    </article>
-    <article>
-      <span class="tag tag-global">Global</span>
-      <h3>Snapchat launches ad format built for pharma disclosure needs</h3>
-      <p>Snapchat now supports up to three disclaimer CTAs alongside a primary call to action, letting pharma marketers link to safety, patient and prescribing information within a single ad across Snap Ads, Story Ads and Commercials.</p>
-      <a href="https://www.fiercepharma.com/marketing/snapchat-creates-ad-format-support-pharma-disclosure-needs" target="_blank" rel="noopener">Fierce Pharma →</a>
-    </article>
-    <article>
-      <span class="tag tag-global">Global</span>
-      <h3>Leo Pharma marks 2nd annual GPP Awareness Day</h3>
-      <p>Leo Pharma and the National Psoriasis Foundation are running a rare-disease education push for generalized pustular psoriasis, aiming to speed diagnosis of a condition often mistaken for common plaque psoriasis.</p>
-      <a href="https://www.fiercepharma.com/marketing/leo-pharma-readies-rare-disease-education-push-2nd-annual-gpp-awareness-day" target="_blank" rel="noopener">Fierce Pharma →</a>
-    </article>
-    <article>
-      <span class="tag tag-global">Global</span>
-      <h3>Abbott offers $1M prize in college blood-supply campaign</h3>
-      <p>Abbott is again pitting Big Ten universities against each other for a $1 million prize tied to blood donation, tapping campus rivalry to build brand visibility around a public-health need.</p>
-      <a href="https://www.fiercepharma.com/marketing/abbott-pump-blood-supply-1m-college-sports-prize-amid-us-crisis" target="_blank" rel="noopener">Fierce Pharma →</a>
-    </article>
-    <article>
-      <span class="tag tag-global">Global</span>
-      <h3>PM360: patient experience becomes a top 2026 marketing priority</h3>
-      <p>PM360's "State of Pharmaceutical Marketing in 2026" report finds patient experience is becoming as strategically important as clinical development, with the industry shifting from campaign-based communication to integrated, data-informed engagement across the treatment journey.</p>
-      <a href="https://pm360online.com/state-of-pharmaceutical-marketing-in-2026/" target="_blank" rel="noopener">PM360 →</a>
-    </article>
-    <article>
-      <span class="tag tag-global">Global</span>
-      <h3>FDA's OPDP flags misleading DTC ad and podcast content</h3>
-      <p>The FDA's Office of Prescription Drug Promotion issued a warning letter to ImmunityBio in March over a direct-to-consumer broadcast ad and podcast for ANKTIVA — a reminder that DTC and audio/podcast placements remain squarely within OPDP's review scope.</p>
-      <a href="https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/immunitybio-inc-725468-03132026" target="_blank" rel="noopener">FDA →</a>
-    </article>
-  </section>
-
-  <section class="trends">
-    <h2>Trends to Watch</h2>
-    <div class="trend"><strong>Compliance-by-design ad formats.</strong> Platforms like Snapchat are now building disclosure and safety-information tooling directly into ad units, lowering the friction of running compliant DTC campaigns on social channels.</div>
-    <div class="trend"><strong>Patient experience as strategy.</strong> PM360's 2026 outlook and Leo Pharma's rare-disease awareness push both signal that patient experience and education campaigns are becoming as central to brand plans as clinical data.</div>
-    <div class="trend"><strong>Digital regulatory infrastructure.</strong> EFPIA's ePI rollout across 31 countries shows electronic product information becoming standard infrastructure, reshaping how marketing and medical-legal-regulatory teams collaborate on content.</div>
-  </section>
-
   <footer>
-    Automated daily briefing compiled from whitelisted sources only: Pharma.nl, CBG-MEB, KNMP, Health-Holland, EMA, EFPIA, Pharmaceutical Technology, European Pharmaceutical Review, FiercePharma, PM360, PharmaVoice, FDA.gov, Reuters Health.<br>
-    Generated automatically — <a href="https://njoymarketingonline.github.io/pharma-newsfeed" target="_blank" rel="noopener">njoymarketingonline.github.io/pharma-newsfeed</a>
+    Sources: Pharma.nl · CBG-MEB · KNMP · Health~Holland · EMA · EFPIA · Pharmaceutical Technology · European Pharmaceutical Review · FiercePharma · PM360 · PharmaVoice · FDA.gov · Reuters Health<br>
+    Automatically generated daily — content curated exclusively from the above whitelisted sources.
   </footer>
+
 </div>
 </body>
 </html>
